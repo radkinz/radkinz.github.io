@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pythagoras Tree</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/CSSsubpages/PythagorasTree.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>
+      Pythagoras Tree
+       <a href="/recursionsubpages/homepage.html">
+           <button id="homebutton">Go Back</button>
+       </a></h1>
+    <script
+      src="https://cdn.glitch.com/7616735a-c9d7-4c9d-9178-8489a3306d8c%2Fp5.js?v=1609031588731"
+      defer
+    ></script>
+    <script>
+      let angle = 45;
+      let slider;
+
+      function setup() {
+        slider = createSlider(1.0, 100.0, 50.0);
+        slider.position(40, 120);
+        slider.style("width", "150px");
+       let cvn = createCanvas(window.innerWidth-72, window.innerHeight);
+      }
+
+      function draw() {
+        background(0);
+        colorMode(HSB);
+        fill(255);
+        textSize(20);
+        text('Use the Slider to Change the Speed', 170,30);
+        let angleX = map(cos(frameCount / slider.value()), -1, 1, 30, 60);
+        let angleY = map(sin(frameCount / slider.value()), -1, 1, 30, 60);
+        angle = (angleX + angleY) / 2;
+
+        translate(width / 2 - 25, height-150);
+        pythagorasTree(100, angle);
+      }
+
+      function pythagorasTree(x, a) {
+        if (x < 5) {
+          return;
+        }
+
+        let angleA = a;
+        let angleB = 90 - angleA;
+        let newLengthA = x * sin(radians(angleA));
+        let newLengthB = x * cos(radians(angleA));
+
+        fill(
+          map(x, 5, 60, 0, 300),
+          map(x, 5, 60, 0, 300),
+          map(x, 5, 60, 100, 300)
+        );
+        rect(0, 0, x, x);
+        push();
+        rotate(-radians(angleB));
+        translate(0, -newLengthA);
+        pythagorasTree(newLengthA, 45);
+        pop();
+        push();
+        rotate(radians(angleA));
+        translate(0, -(newLengthA + newLengthB));
+        pythagorasTree(newLengthB, 45);
+        pop();
+      }
+    </script>
+  </body>
+</html>

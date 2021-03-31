@@ -1,0 +1,31 @@
+/* CSS files add styling rules to your content */
+
+body {
+  background-color: #e3ecf1;
+  margin: 36px;
+  font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-style: bold;
+  color: #000000;
+}
+
+#homebutton {
+  font-size: 20px;
+  float: right;
+  font-style: Bold;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+#mazegenbutton,
+#easybutton,
+#medbutton,
+#hardbutton {
+  font-size: 20px;
+  font-style: Bold;
+  cursor: pointer;
+  background-color: #ffffff;
+}
