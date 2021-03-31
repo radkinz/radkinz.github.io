@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>My Website</title>
+
+    <!-- import the webpage's stylesheet -->
+    <style>/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+
+}
+
+h1 {
+  font-style: bold;
+  color: #00c5f7;
+}
+</style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import the webpage's javascript file -->
+    <script>/* If you're feeling fancy you can add interactivity 
+    to your site with Javascript */
+
+// prints "hi" in the browser's dev tools console (F12)
+$("#button").click(buttonClicked);
+
+var i = 0;
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+console.log("HI");
+console.log(i);
+console.log(getRandomInt(100));
+
+function buttonClicked() {
+  i += 1;
+  console.log(i);
+  console.log($("#clicks").text(i));
+  $("#clicks").text(i);
+  
+  //user input
+  console.log(parseInt($("input:text").val()));
+}
+</script>
+  </head>
+  <body>
+    <h1>
+      Title
+    </h1>
+    <h2>
+      By: Ruby Adkins
+    </h2>
+    <img
+      src="https://cdn.glitch.com/b4bc18b7-a835-4c38-ab85-89088b4218ce%2FVictor.jpg?v=1608688195475"
+    />
+    <div>
+      <button id="button">Click Me!</button>
+      <p>Clicks = <span id="clicks"></span></p>
+      <input type="text" id="num" /><br /><br />
+    </div>
+  </body>
+</html>
