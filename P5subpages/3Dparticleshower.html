@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3D Particle Shower</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/CSSsubpages/3Dparticleshower.css" />
+  </head>
+  <body>
+    <h1>
+      3D Particle Shower <a href="/OOPsubpages/home.html">
+         <button id="homebutton">Go Back</button></a>
+    </h1>
+
+    <script
+      src="https://cdn.glitch.com/7616735a-c9d7-4c9d-9178-8489a3306d8c%2Fp5.js?v=1609031588731"
+      defer
+    ></script>
+    <script>
+      class Particle {
+        constructor() {
+          this.x = 255;
+          this.y = window.innerHeight + 25;
+          this.Vx = random(-0.75, 0.75);
+          this.Vy = random(-12, -5);
+          this.r = random(5, 15);
+          this.z = random(-30, 30);
+          if (this.z < 0) {
+            this.Az = random(-1, 0);
+          } else {
+            this.Az = random(0, 1);
+          }
+        }
+
+        update() {
+          //apply velocity
+          this.x += this.Vx;
+          this.y += this.Vy;
+
+          //apply gravity
+          this.Vy += 0.1;
+
+          //add or subtract from the z
+          this.z += this.Az;
+        }
+
+        show() {
+          noStroke();
+          fill(255);
+          push();
+          translate(this.x - 250, this.y - 270, this.z);
+          sphere(this.r, 10, 10);
+          pop();
+        }
+      }
+
+      let r = 300;
+      let degrees = 0;
+      let particles = [];
+
+      function setup() {
+       createCanvas(windowWidth-72, windowHeight-112, WEBGL);
+      }
+
+      function draw() {
+        let x = r * cos(radians(degrees));
+        let z = r * sin(radians(degrees));
+        camera(x, 0, z, 0, 130, 0, 0, 1, 0);
+        degrees += 1;
+
+        background(0);
+
+        directionalLight(5, 228, 252, 1, 0, 0);
+        directionalLight(5, 228, 252, 0, 0, 1);
+        directionalLight(5, 228, 252, -1, 1, 0);
+        directionalLight(5, 228, 252, 0, 0, -1);
+        particles.push(new Particle());
+        for (var i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].show();
+        }
+
+        //end behavior
+        if (particles.length > 160) {
+          particles.splice(0, 1);
+        }
+      }
+    </script>
+  </body>
+</html>
