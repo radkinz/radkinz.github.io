@@ -10,28 +10,83 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <div class="homepage">
-      <h1>Hi there!</h1>
-      <div id="imgwrapper">
-        <div class="titlecontainer">
-          
-          <img
-            id="imgheader"
-            src="https://cdn.glitch.com/a5fd40be-8de4-47b6-afb7-0ca66896ab52%2FIMG-6832.JPEG?v=1618883994762"
-          />
-          <div id="imgoverlay">
-          </div>
-          
-           <div id="mainText">BWSL</div>
-          <div id="nikeText">NIKE</div>
-          <div id="cvaText">CVA</div>
-          </div>
-      </div>
-
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">Home</a>
+      <a href="#">Schedules</a>
+      <a href="#">Highlights</a>
+      <a href="#">Contact Us</a>
     </div>
+
+    <div class="homepage">
+      <div id="coverContainer">
+        <div class="header">
+          <div id="logo">
+            <div id = "logoImage">
+            <img
+              id="logoimg"
+              src="https://cdn.glitch.com/a5fd40be-8de4-47b6-afb7-0ca66896ab52%2FIMG-1068(1)(1).png?v=1619011366124"
+            />
+            </div>
+           <span><div id="headerText">
+              Boo Williams CVA Basketball
+            </div></span> 
+          </div>
+          <span>
+            <div class="headerLink">
+              <div class="link" id="homelink">Home</div>
+              <div class="link">Schedules</div>
+              <div class="link">Highlights</div>
+              <div class="link">Contact Us</div>
+              <div
+                style="font-size:60px;cursor:pointer"
+                onclick="openNav()"
+                id="sidepanel"
+              >
+                &#9776;
+              </div>
+            </div>
+          </span>
+        </div>
+        <div id="imgwrapper">
+          <div class="titlecontainer">
+            <img
+              id="imgheader"
+              src="https://cdn.glitch.com/a5fd40be-8de4-47b6-afb7-0ca66896ab52%2FIMG-6832.JPEG?v=1618883994762"
+            />
+            <div id="imgoverlay"></div>
+
+            <div id="cvaText">Central VA</div>
+            <div id="nikeText">NIKE</div>
+            <div id="bwslText">BWSL</div>
+          </div>
+        </div>
+      </div>
+      <div class="schedulepage">
+        <div id="tweetcontainer">
+          <div id = "twitterTitle">
+            Follow us on Twitter!
+          </div>
+          
+          <div id="followButton">
+          <a href="https://twitter.com/VABelles1?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @VABelles1</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div> 
+        <div id="tweets">
+      <a class="twitter-timeline" href="https://twitter.com/VABelles1?ref_src=twsrc%5Etfw" data-tweet-limit="10" 
+  data-height="500">Tweets by VABelles1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+        </div>
+          
+          
+             </div>
+        </div>
+      </div>
   </body>
 </html>
