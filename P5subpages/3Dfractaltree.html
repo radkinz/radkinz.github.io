@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3D Fractal Tree</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/CSSsubpages/3DFractalTree.css" />
+
+  </head>
+  <body>
+    <h1>3D Fractal Tree
+        <a href="/recursionsubpages/homepage.html">
+           <button id="homebutton">Go Back</button>
+       </a></h1>
+
+    <script
+      src="https://cdn.glitch.com/7616735a-c9d7-4c9d-9178-8489a3306d8c%2Fp5.js?v=1609031588731"
+      defer
+    ></script>
+    <script>
+      let degrees = 0;
+
+      function setup() {
+        createCanvas(windowWidth-72, windowHeight-72, WEBGL);
+      }
+
+      function draw() {
+        background(220);
+
+        //camera
+        let r = 800;
+        let x = r * cos(radians(degrees));
+        let z = r * sin(radians(degrees));
+        translate(width / 2, height, 0);
+        camera(x, -150, z, 0, -150, 0, 0, 1, 0);
+        degrees += 3;
+
+        //tree
+        tree(90);
+      }
+
+      function tree(branch) {
+        let angle = 25;
+        if (branch <= 15) {
+          return;
+        }
+
+        //tree
+        if (branch < 40) {
+          fill(0, map(branch, 5, 25, 10, 500), 0);
+        } else {
+          fill(140, 69, 19);
+        }
+
+        box(10, branch, 20);
+        translate(0, -branch / 2);
+        push();
+        translate(15, (-branch / 2) * 0.6);
+        rotate(radians(angle));
+        tree(0.75 * branch); //call itself
+        pop();
+        push();
+        translate(-15, (-branch / 2) * 0.6);
+        rotate(-radians(angle));
+        tree(0.75 * branch); //call itself
+        pop();
+        push();
+        translate(0, (-branch / 2) * 0.6);
+        rotateY(radians(90));
+        tree(0.75 * branch); //call itself
+        pop();
+      }
+    </script>
+  </body>
+</html>

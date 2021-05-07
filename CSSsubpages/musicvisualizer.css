@@ -1,0 +1,27 @@
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: #e3ecf1;
+}
+
+h1 {
+  font-size: 40px;
+  font-style: bold;
+  color: #000000;
+}
+
+#button {
+  font-size: 20px;
+  font-style: Bold;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+#homebutton {
+  font-size: 20px;
+  float: right;
+  font-style: Bold;
+  cursor: pointer;
+  background-color: #ffffff;
+}

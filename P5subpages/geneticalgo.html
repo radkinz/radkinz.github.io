@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Genetic Algorithm</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/CSSsubpages/geneticalgo.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>
+      <a href="/OOPsubpages/home.html">
+         <button id="homebutton">Go Back</button></a>
+    </h1>
+    <script
+      src="https://cdn.glitch.com/7616735a-c9d7-4c9d-9178-8489a3306d8c%2Fp5.js?v=1609031588731"
+      defer
+    ></script>
+    <script>
+      class Word {
+        constructor(wordlength) {
+          this.genotype = [];
+
+          for (let i = 0; i < wordlength; i++) {
+            this.genotype[i] = this.newChar();
+          }
+
+          this.fitness = 0;
+        }
+
+        newChar() {
+          let c = floor(random(32, 123));
+          return char(c);
+        }
+
+        printWord() {
+          return this.genotype.join("");
+        }
+
+        calculateFitness() {
+          for (let i = 0; i < idealWord.length; i++) {
+            if (this.genotype[i] == idealWord.charAt(i)) {
+              this.fitness += 1;
+            }
+          }
+
+          if (this.fitness == idealWord.length) {
+            run = false;
+          }
+
+          this.fitness = this.fitness / idealWord.length;
+          this.fitness = pow(this.fitness, 150);
+        }
+
+        breed(mate) {
+          var child = new Word();
+
+          child.genotype = [];
+
+          for (let i = 0; i < idealWord.length; i++) {
+            if (random(1) < 0.5) {
+              child.genotype[i] = this.genotype[i];
+            } else {
+              child.genotype[i] = mate.genotype[i];
+            }
+          }
+
+          return child;
+        }
+
+        mutate(mutateRate) {
+          for (let i = 0; i < idealWord.length; i++) {
+            if (random(1) < mutateRate) {
+              this.genotype[i] = this.newChar();
+            }
+          }
+        }
+      }
+
+      let idealWord = "target word";
+      let maxfitword = [];
+      let popsize = 2000;
+      let fitnessSum = 0;
+      let words = [popsize];
+      let mutationRate = 0.25;
+      let Generation = 0;
+      let bestmatch;
+      let timecomplexity = 0;
+      let starttime = 0;
+      let endtime = 0;
+      let input;
+      var run = true;
+
+      function setup() {
+        noCanvas();
+        input = createInput();
+        frameRate(100);
+
+        //best match
+        bestMatch = createDiv("BestMatch");
+        bestMatch.class("bestMatch");
+
+        //ideal word with user input
+        targetword = createDiv("Target Word:");
+        targetword.class("targetword");
+        input.position(150, 112);
+
+        //time complexity
+        time = createDiv("Time");
+        time.class("time");
+
+        //generations
+        generations = createDiv("Generations");
+        generations.class("generations");
+
+        //mutation rate
+        mutationrate = createDiv("MutationRate");
+        mutationrate.class("mutationrate");
+
+        button = createButton("Run");
+        button.class("button");
+
+        //best phrases
+        bestwords = createP("BestWord");
+        bestwords.class("bestwords");
+
+        for (let i = 0; i < popsize; i++) {
+          words[i] = new Word(idealWord.length);
+        }
+      }
+      function runagain() {
+        run = true;
+        for (let i = 0; i < popsize; i++) {
+          words[i] = new Word(idealWord.length);
+        }
+        Generation = 0;
+        starttime = endtime;
+        timecomplexity = 0;
+        endtime = 0;
+        if (isNaN(input.value()) == true) {
+          idealWord = input.value();
+        }
+        maxfitword = [];
+      }
+
+      function draw() {
+        button.mouseClicked(runagain);
+        time.html(
+          "Time Complexity:" + " " + timecomplexity + " " + "milliseconds"
+        );
+        mutationrate.html(
+          "Mutation Rate:" + " " + round(100 * mutationRate) + "%"
+        );
+        let gentext = "Generation:" + " " + Generation;
+        generations.html(gentext);
+        if (run) {
+          Generation += 1;
+          endtime = millis();
+          timecomplexity = endtime - starttime;
+
+          for (let i = 0; i < words.length; i++) {
+            words[i].calculateFitness();
+          }
+
+          let maxfit = 0;
+          let index = 0;
+          for (let ii = 0; ii < words.length; ii++) {
+            if (maxfit < words[ii].fitness) {
+              maxfit = words[ii].fitness;
+              index = ii;
+            }
+          }
+          maxfitword.push(words[index].printWord());
+          let temp = []; //to reorder words
+          for (let i = maxfitword.length - 1; i > 0; i--) {
+            temp.push(maxfitword[i]);
+          }
+          //determine best match
+          let bestmatchindex = 0;
+          for (let i = 0; i < temp.length; i++) {
+            if (temp[i].fitness > bestmatch) {
+              bestmatch = temp[i].fitness;
+              bestmatchindex = i;
+            }
+          }
+          bestMatch.html(
+            "Best Match:" + " " + '"' + temp[bestmatchindex] + '"'
+          );
+
+          if (temp.length > 300) {
+            for (let i = temp.length - 1; i > 0; i--) {
+              if (i > 300) {
+                temp.splice(i, 1);
+              }
+            }
+          }
+          bestwords.html(
+            "Best Match for Each Generation:" + "<br>" + temp.join("<br>")
+          );
+
+          fitnessSum = 0;
+          for (let i = 0; i < words.length; i++) {
+            fitnessSum += words[i].fitness;
+          }
+
+          breedpop();
+        }
+      }
+
+      function pickMate(parent) {
+        let sum = 0;
+        let mate = 0;
+
+        for (let i = 0; i < words.length; i++) {
+          sum += words[i].fitness;
+          if (sum > parent) {
+            mate = i;
+            break;
+          }
+        }
+
+        return words[mate];
+      }
+
+      function breedpop() {
+        //pick parents
+        var parentA = pickMate(round(random(0, fitnessSum)));
+
+        var parentB = pickMate(round(random(0, fitnessSum)));
+
+        //make sure no self-breeding
+        while (parentA === parentB) {
+          parentB = pickMate(random(0, fitnessSum));
+        }
+
+        //breed and replace
+        for (let i = 0; i < words.length; i++) {
+          var kid = parentA.breed(parentB);
+          kid.mutate(mutationRate);
+          words[i] = kid;
+        }
+      }
+    </script>
+  </body>
+</html>

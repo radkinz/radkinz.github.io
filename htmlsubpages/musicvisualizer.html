@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Music Visualizer</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/CSSsubpages/musicvisualizer.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import the webpage's javascript file -->
+    <script src="/JSsubpages/musicvisualizer.js" defer></script>
+  </head>
+  <body>
+    <h1>
+      Music Visualizer
+      <a href="/index.html"> <button id="homebutton">Go Back</button></a>
+    </h1>
+    <audio
+      controls
+      crossorigin="anonymous"
+      src="https://cdn.glitch.com/9e400882-d5dd-42c9-baa2-d9b525a271e2%2FCabo.mp3?v=1609013315301"
+      id="music"
+    ></audio>
+    <div>
+      <button id="button"><span id="buttonname"></span></button>
+    </div>
+    <h2>
+      <canvas
+        id="myCanvas"
+        width="500"
+        height="500"
+        style="border:1px solid #d3d3d3;"
+      ></canvas>
+    </h2>
+  </body>
+</html>
