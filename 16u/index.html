@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>16u</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="16u/style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <li onclick="myFunction()" class="dropbtn">Teams</li>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="/17u">17u</a>
+          <a href="/16u">16u</a>
+          <a href="/14u">14u</a>
+        </div>
+      </div>
+      <a href="/contact">Contact Us</a>
+    </div>
+    <div class="homepage">
+      <div class="header">
+        <div id="logo">
+          <div id="logoImage">
+            <img
+              id="logoimg"
+              src="https://cdn.glitch.com/a5fd40be-8de4-47b6-afb7-0ca66896ab52%2FIMG-1068(1)(1).png?v=1619011366124"
+            />
+          </div>
+          <span
+            ><div id="headerText">
+              Boo Williams CVA Basketball
+            </div></span
+          >
+        </div>
+        <span id="headerspan">
+          <div class="headerLink">
+            <a class="link" id="homelink" href="/">Home</a>
+            <div class="link" id="dropbutton">
+              <div class="dropdown">
+                <button class="dropbtn">Teams</button>
+                <div class="dropdown-content">
+                  <a href="17u">17u</a>
+                  <a href="16u">16u</a>
+                  <a href="14u">14u</a>
+                </div>
+              </div>
+            </div>
+            <a class="link" href="/contact">Contact Us</a>
+            <div
+              style="font-size:60px;cursor:pointer"
+              onclick="openNav()"
+              id="sidepanel"
+            >
+              &#9776;
+            </div>
+          </div>
+        </span>
+      </div>
+      <div id="title">
+        <img
+          id="titleimg"
+          src="https://cdn.glitch.com/a5fd40be-8de4-47b6-afb7-0ca66896ab52%2FIMG-1123.jpg?v=1619584724288"
+        />
+        <div id="titleoverlay"></div>
+        <div id="titletext">
+          16u
+        </div>
+      </div>
+      <div id="schedule">
+        <div id="scheduletitle">
+          Schedule
+        </div>
+        <div id="scheduleList">
+          <ul>
+            <li>4/9-4/11 BWSL/Hampton</li>
+            <li>4/23-4/24 Boo Williams Nike Invitational</li>
+            <li>5/14-5/16 BWSL/Hampton</li>
+            <li>5/29-5/31 BWSL/Hampton</li>
+            <li>6/19-6/20 BWSL/Hampton</li>
+            <li>7/5-7/8 USJN at VA Beach</li>
+            <li>7/16-7/18 Pittsburgh Challenge</li>
+            <li>7/20-7/23 USJN Harbor, MD</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
