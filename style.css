@@ -39,3 +39,15 @@ img {
     height: 60vh;
     border-radius: 15px;
 }
+
+@media (max-width: 1000px) {
+
+    #frontpage {
+        font-size: 10vh;
+    }
+
+    img {
+        height: 30vh;
+    }
+
+}
