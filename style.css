@@ -46,10 +46,13 @@ html, body {
 }
 
 #aboutpage {
-    background-color: #FFC1A0;
+    background-color: #FF0022;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-#aboutpage, #aboutpageimgdiv, #aboutpagetextdiv {
+#aboutpageimgdiv, #aboutpagetextdiv {
     height: 80vh;
     display: flex;
     align-items: center;
@@ -73,18 +76,23 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-y: scroll;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 15px;
 }
 
 .aboutpagetext {
-    width: 100%;
+    width: 90%;
     overflow: break-word;
-    text-align: CENTER;
+    text-align: center;
     margin-top: 20px;
 }
 
-.aboutpagetext::first-child {
+.aboutpagetext:first-child {
     margin-top: 0;
+}
+
+.aboutpagetext:last-child {
+    margin-bottom: 20px;
 }
 
 #aboutpagetext1 {
@@ -111,6 +119,43 @@ html, body {
 
     .frontpageimg {
         height: 15vh;
+    }
+
+    #aboutpage {
+        display: block;
+    }
+
+    #aboutpagetextcontainer {
+        height: 100%;
+        display: block;
+    }
+
+    .aboutpagetext {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aboutpagetext:first-child {
+        margin-top: 20px;
+    }
+
+    #aboutpageimgdiv, #aboutpagetextdiv {
+        width: 100%;
+    }
+
+    #aboutpageimgdiv {
+        text-align: center;        
+        height: 50vh;
+        margin-bottom: 10px;
+    }
+
+    #aboutpagetextdiv {
+        height: 100%;
+        margin-top: 10px;
+    }
+
+    #aboutpageimg {
+        margin-top: 40px;
     }
 
 }
