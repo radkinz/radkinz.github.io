@@ -61,6 +61,9 @@ html, body {
 
 #aboutpageimgdiv, #aboutpagetextdiv {
     width: 50%;
+}
+
+#aboutpageimgdiv {
     overflow: hidden;
 }
 
@@ -71,18 +74,19 @@ html, body {
 
 #aboutpagetextcontainer {
     width: 80%;
-    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255, 0.5);
     border-radius: 15px;
+    line-height: normal;
+    height: 80%;
+    overflow-y: auto;
 }
 
 .aboutpagetext {
     width: 90%;
-    overflow: break-word;
     text-align: center;
     margin-top: 20px;
 }
@@ -111,7 +115,11 @@ html, body {
     font-weight: 700;
 }
 
-@media (max-width: 700px) {
+#wavegif {
+    width: 5vh;
+}
+
+@media (max-width: 800px) {
 
     #frontpage {
         font-size: 5vh;
@@ -158,4 +166,16 @@ html, body {
         margin-top: 40px;
     }
 
+    #aboutpagetext1 {
+        font-size: 5vh;
+    }
+    
+    #aboutpagetext2 {
+        font-size: 3vh;
+    }
+    
+    #aboutpagetext3 {
+        font-size: 3vh;
+    }
+    
 }
