@@ -274,6 +274,118 @@ ul li:before {
 	content: "❇︎  ";
 }
 
+#WorkExperience {
+    background: rgb(255, 244, 92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 12vh 100px;
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    box-sizing: border-box;
+  }
+
+  body * {
+    box-sizing: border-box;
+  }
+  
+  .timeline {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 100px 50px;
+    position: relative;
+    box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: calc(30% + 30px);
+    bottom: 0px;
+    width: 4px;
+    background: #ddd;
+  }
+
+  .timeline:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .entry {
+    clear: both;
+    text-align: left;
+    position: relative;
+  }
+
+  .entry .title {
+    margin-bottom: 0.5em;
+    float: left;
+    width: 30%;
+    padding-right: 15px;
+    text-align: right;
+    position: relative;
+  }
+
+  .entry .title:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 4px solid salmon;
+    background-color: #fff;
+    border-radius: 100%;
+    top: 15%;
+    right: -23px;
+    z-index: 99;
+  }
+
+  .entry .title h3 {
+    margin: 0;
+    font-size: 100%;
+  }
+
+  .entry .title p {
+    margin: 0;
+    font-size: 80%;
+    color: #aaa;
+    margin-top: 10px;
+  }
+
+  .entry .body {
+    margin: 0 0 3em;
+    float: right;
+    width: 65%;
+    padding-left: 15px;
+  }
+
+  .entry .body p {
+    line-height: 1.4em;
+  }
+
+  .entry .body p:first-child {
+    margin-top: 0;
+    font-weight: 600;
+    margin-bottom: -10px;
+  }
+
+  .entry .body ul {
+    color: #aaa;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .entry .body ul li:before {
+    content: "";
+    margin-right: 0;
+  }
+
 /* phone layout css */
 
 @media (max-width: 800px) {
