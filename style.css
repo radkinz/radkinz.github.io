@@ -13,7 +13,8 @@ html, body {
 #frontpagecontainer {
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #frontpage {
@@ -177,6 +178,7 @@ html, body {
     background-color: rgb(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 @keyframes load{
@@ -369,6 +371,6 @@ ul li:before {
 
     #skillpagetitle {
         font-size: 7vw;
+        height: 8vw;
     }
-    
 }
