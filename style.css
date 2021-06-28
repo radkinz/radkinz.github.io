@@ -106,18 +106,18 @@ html, body {
 }
 
 #aboutpagetext1 {
-    font-size: 7vh;
+    font-size: 150%;
 }
 
 #aboutpagetext2 {
     font-family: 'Lato', sans-serif;
-    font-size: 5vh;
+    font-size: 120%;
     font-weight: 900;
 }
 
 #aboutpagetext3 {
     font-family: 'Lato', sans-serif;
-    font-size: 3vh;
+    font-size: 100%;
     font-weight: 700;
 }
 
@@ -274,8 +274,26 @@ ul li:before {
 	content: "❇︎  ";
 }
 
-#WorkExperience {
+#workexperience {
     background: rgb(255, 244, 92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#workexperiencetitle {
+    width: 100%;
+    height: 10vh;
+    font-size: 9vh;
+    color: white;
+    text-shadow: 3px 3px #000000;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#workexperiencecontainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -438,15 +456,15 @@ ul li:before {
     }
 
     #aboutpagetext1 {
-        font-size: 5vw;
+        font-size: 180%;
     }
     
     #aboutpagetext2 {
-        font-size: 3vw;
+        font-size: 120%;
     }
     
     #aboutpagetext3 {
-        font-size: 3vw;
+        font-size: 100%;
     }
 
     #skillpage {
@@ -456,6 +474,10 @@ ul li:before {
     #skillpagecontainer {
         height: 100%;
         display: block;
+    }
+
+    #skillpagetitle {
+        margin-bottom: 30px;
     }
 
     #technologyskilldiv, #languageskilldiv {
@@ -484,5 +506,34 @@ ul li:before {
     #skillpagetitle {
         font-size: 7vw;
         height: 8vw;
+    }
+
+    #workexperiencetitle {
+        font-size: 7vw;
+        margin-bottom: 20px;
+    }
+
+    #workexperiencecontainer {
+        padding: 25px 25px;
+    }
+
+    .entry .title h3 {
+        font-size: 60%;
+    }
+    
+    .entry .title p {
+        font-size: 60%;
+    }
+
+    .entry .body {
+        font-size: 60%;
+    }   
+    
+    .entry .title h3 {
+        margin-left: -30px;
+    }
+
+    .entry .title p {
+        margin-left: -30px;
     }
 }
