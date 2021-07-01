@@ -133,7 +133,7 @@ html, body {
 
 #skillpagetitle {
     width: 100%;
-    font-size: 9vh;
+    font-size: 400%;
     color: white;
     text-shadow: 3px 3px #000000;
     text-align: center;
@@ -285,7 +285,7 @@ ul li:before {
 
 #workexperiencetitle {
     width: 100%;
-    font-size: 9vh;
+    font-size: 400%;
     color: white;
     text-shadow: 3px 3px #000000;
     text-align: center;
@@ -477,7 +477,7 @@ body * {
 
 #educationtitle {
     width: 100%;
-    font-size: 9vh;
+    font-size: 400%;
     color: white;
     text-shadow: 3px 3px #000000;
     text-align: center;
@@ -498,7 +498,7 @@ body * {
 
 #projecttitle {
     width: 100%;
-    font-size: 9vh;
+    font-size: 400%;
     color: white;
     text-shadow: 3px 3px #000000;
     text-align: center;
@@ -507,6 +507,7 @@ body * {
 
 .projectimgcontainer {
     width: 20%;
+    max-width: 300px;
     overflow: hidden;
     display: flex;
     align-items: center; 
@@ -516,8 +517,8 @@ body * {
 }
 
 .projectimgcontainer:hover {
-box-shadow: 0 0 3px black;
-margin-top: -5px;
+    box-shadow: 0 0 3px black;
+    margin-top: -5px;
 }
 
 
@@ -539,7 +540,7 @@ margin-top: -5px;
 @media (max-width: 800px) {
 
     #frontpage {
-        font-size: 5vh;
+        font-size: 6vh;
     }
 
     .frontpageimg {
@@ -619,27 +620,22 @@ margin-top: -5px;
         width: 100%;
     }
 
-    #technologyskilllist {
-        width: 40%;
-        font-size: 4vw;
-    }
-
     #technologyskilldiv {
         margin-top: 10px;
         margin-bottom: 20px;
     }
 
     .skilltitle {
-        font-size: 5vw;
+        font-size: 150%;
     }
 
     #skillpagetitle {
-        font-size: 7vw;
-        height: 8vw;
+        font-size: 300%;
+        margin-bottom: 0;
     }
 
     #workexperiencetitle {
-        font-size: 7vw;
+        font-size: 300%;
         margin-bottom: 10px;
         margin: 0;
     }
@@ -674,7 +670,7 @@ margin-top: -5px;
     }
 
     #educationtitle {
-        font-size: 7vh;
+        font-size: 300%;
     }
 
     .items-head p {
@@ -696,5 +692,18 @@ margin-top: -5px;
         margin-left: 0;
         display: grid;
         grid-gap: 10px;
+    }
+
+    .projectimgcontainer {
+        width: 75%;
+        box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .projectimgcontainer:hover {
+        box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.2);
+    }
+
+    #projecttitle {
+        font-size: 300%;
     }
 }
