@@ -119,4 +119,14 @@
   .box:hover::after {
       opacity: 1;
   }
-  
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 5vh;
+    }
+    
+    h2, h3, #snakegamedes, #perlinnoisedes, #rpsdes, #pizzades {
+      font-size: 3vh;
+    }
+    
+  }
