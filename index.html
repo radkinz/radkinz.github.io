@@ -347,11 +347,32 @@
         <div id="projecttitle">Projects</div>
         <div id="projectcontainer">
             <div class="projectimgcontainer">
-                <a href="/creativity-journal/" target="_blank">
+                <a class = "trigger_popup_fricc">
                     <img class="projectimg" src="images/creativitythumbnail.PNG">
                 </a>
+
+                <div class="hover_bkgr_fricc">
+                    <span class="helper"></span>
+                    <div>
+                        <div class="popupCloseButton">&times;</div>
+                        <a href = "/creativity-journal/" target="blank">Click here to see my creativity journal</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script>
+                $(".trigger_popup_fricc").click(function () {
+                    $('.hover_bkgr_fricc').show();
+                });
+                $('.hover_bkgr_fricc').click(function () {
+                    $('.hover_bkgr_fricc').hide();
+                });
+                $('.popupCloseButton').click(function () {
+                    $('.hover_bkgr_fricc').hide();
+                });
+        </script>
+
     </div>
 </body>
 
