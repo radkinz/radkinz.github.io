@@ -587,7 +587,22 @@ body * {
 .trigger_popup_fricc {
     cursor: pointer;
 }
-/* Popup box BEGIN */
+
+.popup p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.popup a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.popup img {
+    width: 50%;
+    max-width: 300px;
+    border-radius: 15px;
+}
 
 
 
