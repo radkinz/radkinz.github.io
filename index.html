@@ -347,36 +347,76 @@
         <div id="projecttitle">Projects</div>
         <div id="projectcontainer">
             <div class="projectimgcontainer">
-                <a class = "trigger_popup_fricc">
-                    <img class="projectimg" src="images/creativitythumbnail.PNG">
+                <a class="trigger_popup_fricc">
+                    <div class="projectimg">
+                        <img class="projectimg" src="images/creativitythumbnail.PNG">
+                    </div>
                 </a>
 
                 <div class="hover_bkgr_fricc">
                     <span class="helper"></span>
                     <div class="popup">
                         <div class="popupCloseButton">&times;</div>
+                        <h2>A Creativity Journal</h2>
                         <img src="images/creativitythumbnail.PNG">
-                        <p>A static website for my Honors Data Structures final project. 
-                            The website is a portfolio of smaller projects that I made to induce my inner creativity. 
-                        At the time, while making my final, I felt stuck in a creative block. 
-                        Thus, I decided to embrace the small, beautiful projects where my love for CS truly began. 
+                        <p>A static website for my Honors Data Structures final project.
+                            The website is a portfolio of smaller projects that I made to induce my inner creativity.
+                            At the time, whi le making my final, I felt stuck in a creative block.
+                            Thus, I decided to embrace the small, beautiful projects where my love for CS truly began.
                         </p>
-                        <a href = "/creativity-journal/" target="blank">See Website Here</a>
+                        <a href="/creativity-journal/" target="blank">See Website Here</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projectimgcontainer">
+                <a class="trigger_popup_fricc2">
+                    <div class="projectimg">
+                        <img src="images/elizathumbnail.PNG">
+                    </div>
+                </a>
+
+                <div class="hover_bkgr_fricc2">
+                    <span class="helper"></span>
+                    <div class="popup">
+                        <h2>An Eliza Chatbot</h2>
+                        <div class="popupCloseButton2">&times;</div>
+                        <img src="images/elizathumbnail.PNG">
+                        <p>The original Eliza was one of the first chatbots created in the 1960s at the MIT Artificial
+                            Intelligence Laboratory. Eliza uses rogerian therapy to deconstruct the user's input to
+                            formulate a response. I created my own version of the Eliza using similar methods of
+                            deconstructing user input. However my Eliza strays away from acting as a professional
+                            therapist, and instead it is more of a casual pal to keep you company. 
+                        </p>
+                        <a href="http://eliza-chatbot.me/" target="blank">See Website Here</a>
+                        <a href="https://github.com/radkinz/eliza-chatbot" target="blank">See Github Repo</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <script>
-                $(".trigger_popup_fricc").click(function () {
-                    $('.hover_bkgr_fricc').show();
-                });
-                $('.hover_bkgr_fricc').click(function () {
-                    $('.hover_bkgr_fricc').hide();
-                });
-                $('.popupCloseButton').click(function () {
-                    $('.hover_bkgr_fricc').hide();
-                });
+
+            //popups for projects
+            $(".trigger_popup_fricc").click(function () {
+                $('.hover_bkgr_fricc').show();
+            });
+            $('.hover_bkgr_fricc').click(function () {
+                $('.hover_bkgr_fricc').hide();
+            });
+            $('.popupCloseButton').click(function () {
+                $('.hover_bkgr_fricc').hide();
+            });
+
+            $(".trigger_popup_fricc2").click(function () {
+                $('.hover_bkgr_fricc2').show();
+            });
+            $('.hover_bkgr_fricc2').click(function () {
+                $('.hover_bkgr_fricc2').hide();
+            });
+            $('.popupCloseButton2').click(function () {
+                $('.hover_bkgr_fricc2').hide();
+            });
         </script>
 
     </div>
