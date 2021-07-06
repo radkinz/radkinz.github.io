@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  canvas {
+    display: block;
+    margin-left: 5px;
+  }
+  
+  button {
+    margin-left: 20px;
+  }
+  
+  h1 {
+    width: 100%;
+    font-weight: 600;
+    font-size: 300%;
+    margin-left: 20px;
+    margin-bottom: 0px;
+  }
