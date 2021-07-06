@@ -63,6 +63,8 @@
                             <li>jQuery</li>
                             <li>Socket.io</li>
                             <li>MySQL</li>
+                            <li>Flask-SQLAlchemy</li>
+                            <li>Shiny</li>
                         </ul>
                     </div>
                 </div>
@@ -389,7 +391,32 @@
                             therapist, and instead it is more of a casual pal to keep you company. 
                         </p>
                         <a href="http://eliza-chatbot.me/" target="blank">See Website Here</a>
+                        <br>
                         <a href="https://github.com/radkinz/eliza-chatbot" target="blank">See Github Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projectimgcontainer">
+                <a class="trigger_popup_fricc3">
+                    <div class="projectimg">
+                        <img src="images/minimaxthumbnail.PNG">
+                    </div>
+                </a>
+
+                <div class="hover_bkgr_fricc3">
+                    <span class="helper"></span>
+                    <div class="popup">
+                        <h2>Tic-Tac-Toe AI</h2>
+                        <div class="popupCloseButton3">&times;</div>
+                        <img src="images/minimaxthumbnail.PNG">
+                        <p> A website written with the JavaScript library, p5.js, where the user can play tic-tac-toe against a near "unbeatable" AI.
+                            The AI is written using the Minimax Algorithm to generate the optimal next move. The algorithm uses recursion
+                            to go through possible game scenarios to see which move is most likely to result in a win.  
+                        </p>
+                        <a href="/minimax-algo/" target="blank">See Website Here</a>
+                        <br>
+                        <a href="https://github.com/radkinz/minimax-algo-with-tic-tac-toe" target="blank">See Github Repo</a>
                     </div>
                 </div>
             </div>
@@ -416,6 +443,16 @@
             });
             $('.popupCloseButton2').click(function () {
                 $('.hover_bkgr_fricc2').hide();
+            });
+
+            $(".trigger_popup_fricc3").click(function () {
+                $('.hover_bkgr_fricc3').show();
+            });
+            $('.hover_bkgr_fricc3').click(function () {
+                $('.hover_bkgr_fricc3').hide();
+            });
+            $('.popupCloseButton3').click(function () {
+                $('.hover_bkgr_fricc3').hide();
             });
         </script>
 
