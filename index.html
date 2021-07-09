@@ -47,7 +47,7 @@
         $("#myHeader").hide()
 
         function myFunction() {
-            if (window.pageYOffset > (document.getElementById("aboutpage").offsetTop)-20) {
+            if (window.pageYOffset > (document.getElementById("aboutpage").offsetTop) - 30) {
                 header.classList.add("sticky")
                 $("#myHeader").show()
             } else {
@@ -59,42 +59,47 @@
         }
 
         document.getElementById("aboutheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("aboutpage").offsetLeft, document.getElementById("aboutpage").offsetTop)
+            window.scrollTo(document.getElementById("aboutpage").offsetLeft, (document.getElementById("aboutpage").offsetTop) - 25)
         });
 
         document.getElementById("skillheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("skillpage").offsetLeft, document.getElementById("skillpage").offsetTop)
+            window.scrollTo(document.getElementById("skillpage").offsetLeft, (document.getElementById("skillpage").offsetTop) - 25)
         });
 
         document.getElementById("workexperienceheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("workexperience").offsetLeft, document.getElementById("workexperience").offsetTop)
+            window.scrollTo(document.getElementById("workexperience").offsetLeft, (document.getElementById("workexperience").offsetTop) - 25)
         });
 
         document.getElementById("educationheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("education").offsetLeft, document.getElementById("education").offsetTop)
+            window.scrollTo(document.getElementById("education").offsetLeft, (document.getElementById("education").offsetTop) - 25)
         });
 
         document.getElementById("projectheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("project").offsetLeft, document.getElementById("project").offsetTop)
+            window.scrollTo(document.getElementById("project").offsetLeft, (document.getElementById("project").offsetTop) - 25)
         });
     </script>
 
 
     <div id="aboutpage">
-        <div id="aboutpageimgdiv">
-            <img id="aboutpageimg" src="images/IMG-4406.jpg">
-        </div>
-        <div id="aboutpagetextdiv">
-            <div id="aboutpagetextcontainer">
-                <div class="aboutpagetext" id="aboutpagetext1">Hi There Traveler!<img src="images/wave.gif"
-                        id="wavegif"></div>
-                <div class="aboutpagetext" id="aboutpagetext2">My name is Ruby Adkins</div>
-                <div class="aboutpagetext" id="aboutpagetext3">A rising senior in high school, who is in love with the
-                    world of computer science.
-                    My passion with CS was fast-growing, and currently I want to explore all areas of the field and
-                    learn as much as I can.
-                    I hope to one day create experiences that empower the common person, and bring a little light into
-                    what sometimes seems like a dull, monotoned world.
+        <div id="aboutpagetitle">About Me</div>
+        <div id="aboutpagecontainer">
+            <div id="aboutpageimgdiv">
+                <img id="aboutpageimg" src="images/IMG-4406.jpg">
+            </div>
+            <div id="aboutpagetextdiv">
+                <div id="aboutpagetextcontainer">
+                    <div class="aboutpagetext" id="aboutpagetext1">Hi There Traveler!<img src="images/wave.gif"
+                            id="wavegif"></div>
+                    <div class="aboutpagetext" id="aboutpagetext2">My name is Ruby Adkins</div>
+                    <div class="aboutpagetext" id="aboutpagetext3">A rising senior in high school, who is in love with
+                        the
+                        world of computer science.
+                        My passion with CS was fast-growing, and currently I want to explore all areas of the field and
+                        learn as much as I can.
+                        I hope to one day create experiences that empower the common person, and bring a little light
+                        into
+                        what sometimes seems like a dull, monotoned world.
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,7 +142,7 @@
                 <div class="entry">
                     <div class="title">
                         <h3>IT Assistant</h3>
-                        <p>May 2021 - Present</p>
+                        <p>Jun 2021 - Present</p>
                     </div>
                     <div class="body">
                         <p>James Madison University
@@ -153,13 +158,14 @@
                 <div class="entry">
                     <div class="title">
                         <h3>Teaching Assistant</h3>
-                        <p>April 2021 - May 2021</p>
+                        <p>May 2021 - Jun 2021</p>
                     </div>
                     <div class="body">
                         <p>James Madison University
                         </p>
                         <ul>
-                            <li>Helped teach and run the Chemistry 120 class primarily for pre-nursing students. Held
+                            <li>Helped teach and run the Chemistry 120 class primarily for nursing and health science
+                                majors. Held
                                 3-4
                                 review sessions weekly to answer questions about content and prepare students for exams.
                                 Oversaw breakout room sessions and every 3hr lecture Monday-Thursday for the full 4
@@ -190,7 +196,7 @@
                 <div class="entry">
                     <div class="title">
                         <h3>Undergraduate Research</h3>
-                        <p>Jun. 2018 - July 2019, Jun. 2019 - Nov. 2020, May 2020 - Aug. 2020</p>
+                        <p>Jun. 2018 - July 2019, Jun. 2019 - Nov. 2019, May 2020 - Aug. 2020</p>
                     </div>
                     <div class="body">
                         <p>James Madison University
@@ -200,7 +206,7 @@
                                 of
                                 Dr. Christopher Berndsen. Helped assist in other student's research, worked to purify
                                 the
-                                protein HvPPa, and worked with Small-Angle X-ray Scattering Data</li>
+                                protein HvPPa, and worked with Small-Angle X-ray Scattering Data.</li>
                         </ul>
                     </div>
                 </div>
