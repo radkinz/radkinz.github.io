@@ -190,8 +190,7 @@ var colur;
 let easybutton, medbutton, hardbutton;
 
 function setup() {
-  cvn = createCanvas(roundbyhundred(windowWidth-72), roundbyhundred(windowHeight-300));
-  cvn.position((windowWidth-width)/2, 250);
+  createCanvas(roundbyhundred(windowWidth-72), roundbyhundred(windowHeight-300));
   colur = color(round(random(0, 255)), round(random(0, 255)), round(random(0, 255)));
   inp = select("#framerateinput");
   rerun = select("#runbutton");
