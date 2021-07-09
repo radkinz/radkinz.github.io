@@ -680,6 +680,42 @@ body * {
     }
 }
 
+#endpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #70fc98;
+}
+
+#endpage div {
+    font-size: 400%;
+    color: white;
+    text-shadow: 3px 3px #000000;
+    text-align: center;
+}
+
+#footer {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    padding: 20px;
+}
+
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: rgb(77, 175, 255);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
 /* phone layout css */
 
 @media (max-width: 800px) {
@@ -694,6 +730,14 @@ body * {
 
     #aboutpage {
         display: block;
+    }
+
+    #aboutpagecontainer {
+        display: block;
+    }
+
+    #aboutpagetitle {
+        font-size: 300%;
     }
 
     #aboutpagetextcontainer {
@@ -716,19 +760,20 @@ body * {
     }
 
     #aboutpageimgdiv {
-        text-align: center;        
-        height: 50vh;
+        text-align: center;   
+        width: 100%;  
         margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #aboutpagetextdiv {
         height: 100%;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     #aboutpageimg {
-        margin-top: 40px;
-        height: 30vh;
+        margin-top: 20px;
     }
 
     #aboutpagetext1 {
@@ -840,6 +885,14 @@ body * {
     }
 
     #projecttitle {
+        font-size: 300%;
+    }
+
+    .header {
+        font-size: 50%;
+    }
+
+    #endpage div {
         font-size: 300%;
     }
 }
