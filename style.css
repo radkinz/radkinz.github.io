@@ -53,16 +53,29 @@ html, body {
 
 #aboutpage {
     background-color: #FF0022;
+}
+
+#aboutpagecontainer {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+#aboutpagetitle {
+    width: 100%;
+    font-size: 400%;
+    color: white;
+    text-shadow: 3px 3px #000000;
+    text-align: center;
+    padding-top: 20px;
+}
+
 #aboutpageimgdiv, #aboutpagetextdiv {
-    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #aboutpageimgdiv, #aboutpagetextdiv {
@@ -614,8 +627,9 @@ body * {
 /* sticky header */
 .header {
     font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 40%;
+    font-weight: 600;
+    font-size: 70%;
+    padding: 0;
     width: 100%;
     background: #000;
     color: #f1f1f1;
@@ -632,6 +646,7 @@ body * {
     width: 100%;
     z-index: 999;
     display: inline;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
