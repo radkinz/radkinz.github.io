@@ -30,6 +30,56 @@
             <img class="frontpageimg" src="images/IMG-5809.JPG">
         </div>
     </div>
+
+    <div class="header" id="myHeader">
+        <h2 id="aboutheader">About Me</h2>
+        <h2 id="skillheader">Skills</h2>
+        <h2 id="workexperienceheader">Work Experience</h2>
+        <h2 id="educationheader">Education</h2>
+        <h2 id="projectheader">Projects</h2>
+    </div>
+
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var header = document.getElementById("myHeader");
+        $("#myHeader").hide()
+
+        function myFunction() {
+            if (window.pageYOffset > (document.getElementById("aboutpage").offsetTop)-20) {
+                header.classList.add("sticky")
+                $("#myHeader").show()
+            } else {
+                $("#myHeader").fadeOut(500, function () {
+                    $("#myHeader").hide()
+                    header.classList.remove("sticky");
+                });
+            }
+        }
+
+        document.getElementById("aboutheader").addEventListener('click', function () {
+            window.scrollTo(document.getElementById("aboutpage").offsetLeft, document.getElementById("aboutpage").offsetTop)
+        });
+
+        document.getElementById("skillheader").addEventListener('click', function () {
+            window.scrollTo(document.getElementById("skillpage").offsetLeft, document.getElementById("skillpage").offsetTop)
+        });
+
+        document.getElementById("workexperienceheader").addEventListener('click', function () {
+            window.scrollTo(document.getElementById("workexperience").offsetLeft, document.getElementById("workexperience").offsetTop)
+        });
+
+        document.getElementById("educationheader").addEventListener('click', function () {
+            window.scrollTo(document.getElementById("education").offsetLeft, document.getElementById("education").offsetTop)
+        });
+
+        document.getElementById("projectheader").addEventListener('click', function () {
+            window.scrollTo(document.getElementById("project").offsetLeft, document.getElementById("project").offsetTop)
+        });
+    </script>
+
+
     <div id="aboutpage">
         <div id="aboutpageimgdiv">
             <img id="aboutpageimg" src="images/IMG-4406.jpg">
@@ -388,7 +438,7 @@
                             Intelligence Laboratory. Eliza uses rogerian therapy to deconstruct the user's input to
                             formulate a response. I created my own version of the Eliza using similar methods of
                             deconstructing user input. However my Eliza strays away from acting as a professional
-                            therapist, and instead it is more of a casual pal to keep you company. 
+                            therapist, and instead it is more of a casual pal to keep you company.
                         </p>
                         <a href="http://eliza-chatbot.me/" target="blank">See Website Here</a>
                         <br>
@@ -410,13 +460,16 @@
                         <h2>Tic-Tac-Toe AI</h2>
                         <div class="popupCloseButton3">&times;</div>
                         <img src="images/minimaxthumbnail.PNG">
-                        <p> A website written with the JavaScript library, p5.js, where the user can play tic-tac-toe against a near "unbeatable" AI.
-                            The AI is written using the Minimax Algorithm to generate the optimal next move. The algorithm uses recursion
-                            to go through possible game scenarios to see which move is most likely to result in a win.  
+                        <p> A website written with the JavaScript library, p5.js, where the user can play tic-tac-toe
+                            against a near "unbeatable" AI.
+                            The AI is written using the Minimax Algorithm to generate the optimal next move. The
+                            algorithm uses recursion
+                            to go through possible game scenarios to see which move is most likely to result in a win.
                         </p>
                         <a href="/minimax-algo/" target="blank">See Website Here</a>
                         <br>
-                        <a href="https://github.com/radkinz/minimax-algo-with-tic-tac-toe" target="blank">See Github Repo</a>
+                        <a href="https://github.com/radkinz/minimax-algo-with-tic-tac-toe" target="blank">See Github
+                            Repo</a>
                     </div>
                 </div>
             </div>
@@ -434,7 +487,9 @@
                         <h2>Image Database</h2>
                         <div class="popupCloseButton4">&times;</div>
                         <img src="images/flaskdbthumbnail.PNG">
-                        <p> A web application that utilizes a SQLAlchemy database to store images. Users from all devices can upload images to create a large, beautiful gallery that the user can view for entertainment.
+                        <p> A web application that utilizes a SQLAlchemy database to store images. Users from all
+                            devices can upload images to create a large, beautiful gallery that the user can view for
+                            entertainment.
                         </p>
                         <a href="https://github.com/radkinz/img-database-with-flask" target="blank">See Github Repo</a>
                     </div>
@@ -454,7 +509,7 @@
                         <div class="popupCloseButton5">&times;</div>
                         <h2>Maze Gen</h2>
                         <img src="images/mazegen.PNG">
-                        <p>A maze generation visualizer algorithm written in p5.js. 
+                        <p>A maze generation visualizer algorithm written in p5.js.
                         </p>
                         <a href="/maze-gen/" target="blank">See Demo Here</a>
                     </div>
@@ -474,7 +529,7 @@
                         <div class="popupCloseButton6">&times;</div>
                         <h2>BWSL Website</h2>
                         <img src="images/bwslthumbnail.PNG">
-                        <p>A website for the Boo William's CVA Basketball Association. 
+                        <p>A website for the Boo William's CVA Basketball Association.
                         </p>
                         <a href="https://bwslcentralva.com/" target="blank">See Website Here</a>
                         <br>
