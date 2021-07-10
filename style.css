@@ -10,11 +10,37 @@ html, body {
 
 /* front page css */
 
+@keyframes slideInFromUp {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+}
+
+@keyframes slideInFromDown {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+}
+
 #frontpagecontainer {
     overflow: hidden;
     width: 100%;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
+}
+
+#imgup {
+    animation: 1s ease-out 0s 1 slideInFromUp;
+}
+
+#imgdown {
+    animation: 1s ease-out 0s 1 slideInFromDown;
 }
 
 #frontpage {
@@ -528,7 +554,14 @@ body * {
     margin-right: auto;
     width: 50%;
     max-width: 500px;
-    margin-top: 20px;
+}
+
+.projectimgcontainer {
+    margin-top: 30px;
+}
+
+.projectimgcontainer:last-child {
+    margin-bottom: 20px;
 }
 
 .projectimg img {
@@ -656,11 +689,11 @@ body * {
     cursor: pointer;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
+
+html {
+    scroll-behavior: smooth;
 }
+
 
 @keyframes slideInFromUp {
     0% {
@@ -682,9 +715,10 @@ body * {
 
 #endpage {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 50px;
+    justify-content: space-evenly;
+    padding: 40px;
     background-color: #70fc98;
 }
 
@@ -714,7 +748,39 @@ body * {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
-  }
+}
+
+.scrollToTopBtn {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 48px;
+    width: 48px;
+    margin-top: 30px;
+    
+    /* keep it at the top of everything else */
+    z-index: 100;
+    /* hide with opacity */
+    opacity: 0;
+    /* also add a translate effect */
+    transform: translateY(100px);
+    /* and a transition */
+    transition: all .5s ease
+}
+
+.scrollToTopBtn:hover{
+    transform: translateY(-10px);
+    /* and a transition */
+    transition: all .5s ease
+}
+      
+.showBtn {
+    opacity: 1;
+    transform: translateY(0)
+}
 
 /* phone layout css */
 
