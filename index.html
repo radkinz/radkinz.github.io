@@ -24,10 +24,10 @@
             <p id="title">Ruby Adkins</p>
         </div>
         <div id="frontpageimgdiv">
-            <img class="frontpageimg" src="images/IMG-4417.png">
-            <img class="frontpageimg" src="images/IMG-4534.jpg">
-            <img class="frontpageimg" src="images/basketballgarage.JPG">
-            <img class="frontpageimg" src="images/IMG-5809.JPG">
+            <img class="frontpageimg" id="imgup" src="images/IMG-4417.png">
+            <img class="frontpageimg" id="imgdown" src="images/IMG-4534.jpg">
+            <img class="frontpageimg" id="imgup" src="images/basketballgarage.JPG">
+            <img class="frontpageimg" id="imgdown" src="images/IMG-5809.JPG">
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         $("#myHeader").hide()
 
         function myFunction() {
-            if (window.pageYOffset > (document.getElementById("aboutpage").offsetTop) - 30) {
+            if (window.pageYOffset > (document.getElementById("aboutpage").offsetTop) - 40) {
                 header.classList.add("sticky")
                 $("#myHeader").show()
             } else {
@@ -59,23 +59,23 @@
         }
 
         document.getElementById("aboutheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("aboutpage").offsetLeft, (document.getElementById("aboutpage").offsetTop) - 25)
+            window.scrollTo(document.getElementById("aboutpage").offsetLeft, (document.getElementById("aboutpage").offsetTop) - 35)
         });
 
         document.getElementById("skillheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("skillpage").offsetLeft, (document.getElementById("skillpage").offsetTop) - 25)
+            window.scrollTo(document.getElementById("skillpage").offsetLeft, (document.getElementById("skillpage").offsetTop) - 35)
         });
 
         document.getElementById("workexperienceheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("workexperience").offsetLeft, (document.getElementById("workexperience").offsetTop) - 25)
+            window.scrollTo(document.getElementById("workexperience").offsetLeft, (document.getElementById("workexperience").offsetTop) - 35)
         });
 
         document.getElementById("educationheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("education").offsetLeft, (document.getElementById("education").offsetTop) - 25)
+            window.scrollTo(document.getElementById("education").offsetLeft, (document.getElementById("education").offsetTop) - 35)
         });
 
         document.getElementById("projectheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("project").offsetLeft, (document.getElementById("project").offsetTop) - 25)
+            window.scrollTo(document.getElementById("project").offsetLeft, (document.getElementById("project").offsetTop) - 35)
         });
     </script>
 
@@ -127,7 +127,7 @@
             <div id="languageskilldiv">
                 <div id="languageskillcontainer">
                     <div class="skilltitle">Programming Languages</div>
-                    <div class="bar python" data-skill="Python">80%</div>
+                    <div class="bar python" id="py" data-skill="Python">80%</div>
                     <div class="bar yellow javascript" data-skill="JavaScript">70%</div>
                     <div class="bar green processing" data-skill="Processing">70%</div>
                     <div class="bar blue r" data-skill="R">30%</div>
@@ -612,6 +612,37 @@
     </div>
     <div id="endpage">
         <div>Thanks for Visiting!</div>
+        <button class="scrollToTopBtn">☝️</button>
+        <script>
+
+
+            var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
+            var rootElement = document.documentElement
+
+            function handleScroll() {
+                // Do something on scroll
+                var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+                if ((rootElement.scrollTop / scrollTotal) > 0.80) {
+                    // Show button
+                    scrollToTopBtn.classList.add("showBtn")
+                } else {
+                    // Hide button
+                    scrollToTopBtn.classList.remove("showBtn")
+                }
+            }
+
+            function scrollToTop() {
+                // Scroll to top logic
+                rootElement.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
+            scrollToTopBtn.addEventListener("click", scrollToTop)
+            document.addEventListener("scroll", handleScroll)
+
+
+        </script>
     </div>
     <div id="footer">
         <span class="dot"></span>
