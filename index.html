@@ -19,6 +19,15 @@
 </head>
 
 <body>
+
+    <div class="header" id="myHeader">
+        <h2 id="aboutheader">About Me</h2>
+        <h2 id="skillheader">Skills</h2>
+        <h2 id="workexperienceheader">Work Experience</h2>
+        <h2 id="educationheader">Education</h2>
+        <h2 id="projectheader">Projects</h2>
+    </div>
+
     <div id="frontpagecontainer">
         <div id="frontpage">
             <p id="title">Ruby Adkins</p>
@@ -31,30 +40,18 @@
         </div>
     </div>
 
-    <div class="header" id="myHeader">
-        <h2 id="aboutheader">About Me</h2>
-        <h2 id="skillheader">Skills</h2>
-        <h2 id="workexperienceheader">Work Experience</h2>
-        <h2 id="educationheader">Education</h2>
-        <h2 id="projectheader">Projects</h2>
-    </div>
-
-
     <script>
         window.onscroll = function () { myFunction() };
 
         var header = document.getElementById("myHeader");
-        $("#myHeader").hide()
  
         function myFunction() {
             if (window.pageYOffset > 20) {
-                header.classList.add("sticky")
-                $("#myHeader").show()
+                header.classList.add("sticky");
+                header.classList.remove("header");
             } else {
-                $("#myHeader").fadeOut(500, function () {
-                    $("#myHeader").hide()
-                    header.classList.remove("sticky");
-                });
+                header.classList.remove("sticky");
+                header.classList.add("header");
             }
         }
 
