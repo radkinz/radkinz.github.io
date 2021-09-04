@@ -305,7 +305,7 @@ body {
 }
 
 .bar.r::before {
-    width: calc(30% - 10px);
+    width: calc(50% - 10px);
 }
 
 #technologyskilllist {
