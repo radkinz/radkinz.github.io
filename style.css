@@ -663,6 +663,7 @@ body * {
 .popup img {
     width: 50%;
     max-width: 300px;
+    max-height: 200px;
     border-radius: 15px;
 }
 
