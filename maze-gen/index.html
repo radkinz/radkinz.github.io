@@ -8,12 +8,11 @@
 
     <title>Maze Gen</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
-
     <link rel="stylesheet" href="/maze-gen/style.css" />
 
-    <script src="/maze-gen/sketch.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/maze-gen/script.js" async defer></script>
 </head>
 
 <body>
@@ -22,12 +21,18 @@
     </h1>
     <label>Frame Rate:</label><input type="text" id="framerateinput">
     <br>
-    <button id="runbutton">Run Again</button>
+    <button id="runbutton" onclick="changeFrameRate">Run Again</button>
     <h2>
-        <button id="easybutton">Easy</button>
-        <button id="medbutton">Medium</button>
-        <button id="hardbutton">Hard</button>
+        <button id="easybutton" onclick="easy">Easy</button>
+        <button id="medbutton" onclick="med">Medium</button>
+        <button id="hardbutton" onclick="hard">Hard</button>
     </h2>
+    <canvas
+    id="Canvas"
+    width="500px"
+    height="500px"
+    style="border:1px solid #d3d3d3;"
+  ></canvas>
 </body>
 
 </html>
