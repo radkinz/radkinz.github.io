@@ -429,30 +429,6 @@
             </div>
 
             <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc3">
-                    <div class="projectimg">
-                        <img src="images/ardino.png">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc3">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <h2>A Fun Arduino Project</h2>
-                        <div class="popupCloseButton3">&times;</div>
-                        <img src="images/ardino.png">
-                        <p> An Arduino project that controls a buzzer by outputting frequencies based on the mouse's y-location in a Processing program. 
-                            The LEDs light up based on the frequency values to act as a frequency monitor. When the user presses the mouse, a group of particles unleash across the screen with velocites determined by perlin noise. 
-                            The color of the particles are also determined by the y-pos of the mouse, and 
-                            the particle colors are outputted in a rgb light in the circuit. 
-                        </p>
-                        <a href="https://github.com/radkinz/ArduinoBuzzerControl" target="blank">See Github
-                            Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
                 <a class="trigger_popup_fricc4">
                     <div class="projectimg">
                         <img src="images/geneticalgo.PNG">
@@ -471,6 +447,26 @@
                             The two birds' genotypes are randomly mixed during the breeding process, with a slight chance of mutation, to create a new generation of flappy birds.
                         </p>
                         <a href="https://github.com/radkinz/Flappy-Bird-Genetic-Algo" target="blank">See Github Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projectimgcontainer">
+                <a class="trigger_popup_fricc7">
+                    <div class="projectimg">
+                        <img class="projectimg" src="images/flappybirdImg.png">
+                    </div>
+                </a>
+
+                <div class="hover_bkgr_fricc7">
+                    <span class="helper"></span>
+                    <div class="popup">
+                        <div class="popupCloseButton7">&times;</div>
+                        <h2>A Multiplayer Flappy Bird Game</h2>
+                        <img src="images/flappybirdImg.png">
+                        <p>A node.js application that uses Express and Socket.io to create a multiplayer flappy bird game, where users can play and connect real-time.
+                        </p>
+                        <a href="https://github.com/radkinz/multiplayer-flappy-bird" target="blank">See Github Repo</a>
                     </div>
                 </div>
             </div>
@@ -513,6 +509,30 @@
                         <a href="https://bwslcentralva.com/" target="blank">See Website Here</a>
                         <br>
                         <a href="https://github.com/radkinz/bwslwebsite" target="blank">See Github Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projectimgcontainer">
+                <a class="trigger_popup_fricc3">
+                    <div class="projectimg">
+                        <img src="images/ardino.png">
+                    </div>
+                </a>
+
+                <div class="hover_bkgr_fricc3">
+                    <span class="helper"></span>
+                    <div class="popup">
+                        <h2>A Fun Arduino Project</h2>
+                        <div class="popupCloseButton3">&times;</div>
+                        <img src="images/ardino.png">
+                        <p> An Arduino project that controls a buzzer by outputting frequencies based on the mouse's y-location in a Processing program. 
+                            The LEDs light up based on the frequency values to act as a frequency monitor. When the user presses the mouse, a group of particles unleash across the screen with velocites determined by perlin noise. 
+                            The color of the particles are also determined by the y-pos of the mouse, and 
+                            the particle colors are outputted in a rgb light in the circuit. 
+                        </p>
+                        <a href="https://github.com/radkinz/ArduinoBuzzerControl" target="blank">See Github
+                            Repo</a>
                     </div>
                 </div>
             </div>
@@ -579,6 +599,16 @@
             });
             $('.popupCloseButton6').click(function () {
                 $('.hover_bkgr_fricc6').hide();
+            });
+
+            $(".trigger_popup_fricc7").click(function () {
+                $('.hover_bkgr_fricc7').show();
+            });
+            $('.hover_bkgr_fricc7').click(function () {
+                $('.hover_bkgr_fricc7').hide();
+            });
+            $('.popupCloseButton7').click(function () {
+                $('.hover_bkgr_fricc7').hide();
             });
         </script>
 

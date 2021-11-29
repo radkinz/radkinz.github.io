@@ -596,7 +596,7 @@ body * {
 }
 
 /* Popup box BEGIN */
-.hover_bkgr_fricc, .hover_bkgr_fricc2, .hover_bkgr_fricc3,  .hover_bkgr_fricc4, .hover_bkgr_fricc5, .hover_bkgr_fricc6 {
+.hover_bkgr_fricc, .hover_bkgr_fricc2, .hover_bkgr_fricc3,  .hover_bkgr_fricc4, .hover_bkgr_fricc5, .hover_bkgr_fricc6, .hover_bkgr_fricc7 {
     background:rgba(0,0,0,.4);
     cursor:pointer;
     display:none;
@@ -607,12 +607,12 @@ body * {
     width:100%;
     z-index:10000;
 }
-.hover_bkgr_fricc .helper, .hover_bkgr_fricc2 .helper, .hover_bkgr_fricc3 .helper, .hover_bkgr_fricc4 .helper, .hover_bkgr_fricc5 .helper, .hover_bkgr_fricc6 .helper{
+.hover_bkgr_fricc .helper, .hover_bkgr_fricc2 .helper, .hover_bkgr_fricc3 .helper, .hover_bkgr_fricc4 .helper, .hover_bkgr_fricc5 .helper, .hover_bkgr_fricc6 .helper, .hover_bkgr_fricc7 .helper{
     display:inline-block;
     height:100%;
     vertical-align:middle;
 }
-.hover_bkgr_fricc > div, .hover_bkgr_fricc2 > div, .hover_bkgr_fricc3 > div, .hover_bkgr_fricc4 > div, .hover_bkgr_fricc5 > div, .hover_bkgr_fricc6 > div  {
+.hover_bkgr_fricc > div, .hover_bkgr_fricc2 > div, .hover_bkgr_fricc3 > div, .hover_bkgr_fricc4 > div, .hover_bkgr_fricc5 > div, .hover_bkgr_fricc6 > div, .hover_bkgr_fricc7 > div  {
     background-color: #fff;
     box-shadow: 10px 10px 60px #555;
     display: inline-block;
@@ -625,7 +625,7 @@ body * {
     border-radius: 8px;
     padding: 15px 5%;
 }
-.popupCloseButton, .popupCloseButton2, .popupCloseButton3, .popupCloseButton4, .popupCloseButton5, .popupCloseButton6 {
+.popupCloseButton, .popupCloseButton2, .popupCloseButton3, .popupCloseButton4, .popupCloseButton5, .popupCloseButton6, .popupCloseButton7 {
     background-color: #fff;
     border: 3px solid #999;
     border-radius: 50px;
@@ -642,11 +642,11 @@ body * {
     height: 30px;
     text-align: center;
 }
-.popupCloseButton:hover, .popupCloseButton2:hover, .popupCloseButton3:hover, .popupCloseButton4:hover, .popupCloseButton5:hover, .popupCloseButton6:hover {
+.popupCloseButton:hover, .popupCloseButton2:hover, .popupCloseButton3:hover, .popupCloseButton4:hover, .popupCloseButton5:hover, .popupCloseButton6:hover, .popupCloseButton7:hover {
     background-color: #ccc;
 }
 
-.trigger_popup_fricc, .trigger_popup_fricc2, .trigger_popup_fricc3, .trigger_popup_fricc4, .trigger_popup_fricc5, .trigger_popup_fricc6 {
+.trigger_popup_fricc, .trigger_popup_fricc2, .trigger_popup_fricc3, .trigger_popup_fricc4, .trigger_popup_fricc5, .trigger_popup_fricc6, .trigger_popup_fricc7 {
     cursor: pointer;
 }
 
@@ -998,5 +998,9 @@ html {
 
     .sticky {
         font-size: 40%;
+    }
+
+    .projectimg {
+        width: 80%;
     }
 }
