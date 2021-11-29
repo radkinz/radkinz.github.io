@@ -1003,4 +1003,8 @@ html {
     .projectimg {
         width: 80%;
     }
+
+    .hover_bkgr_fricc > div, .hover_bkgr_fricc2 > div, .hover_bkgr_fricc3 > div, .hover_bkgr_fricc4 > div, .hover_bkgr_fricc5 > div, .hover_bkgr_fricc6 > div, .hover_bkgr_fricc7 > div  {
+        width: 90%;
+    }
 }
