@@ -298,7 +298,7 @@ body {
 }
 
 .bar.javascript::before {
-    width: calc(70% - 10px);
+    width: calc(80% - 10px);
 }
 
 .bar.processing::before {
