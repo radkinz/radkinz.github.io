@@ -6,6 +6,7 @@ html, body {
     font-family: 'Luckiest Guy', cursive;
     overflow-x: hidden;
     overflow-y: visible;
+    cursor: context-menu;
 }  
 
 /* front page css */
@@ -712,7 +713,7 @@ body * {
     animation: 0.5s ease-out 0s 1 showbackground;
 }
 
-.header h2:hover {
+.h2header:hover {
     cursor: pointer;
 }
 
