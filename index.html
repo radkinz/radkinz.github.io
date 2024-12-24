@@ -2,656 +2,128 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" type="image/png" href="images/wave.gif">
-    <META NAME="viewport" CONTENT="width=device-width, height=device-height, initial-scale=1, user-scalable=no" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>River Adkins</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-    <title>Welcome!</title>
+  <!-- Favicons -->
+  <link href="assets/img/RiverLogo.png" rel="icon">
+  <link href="assets/img/RiverLogo.png" rel="apple-touch-icon">
 
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!-- import jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-    <!-- import the webpage's client-side javascript file -->
-    <script href="/script.js" defer></script>
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Updated: Nov 04 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body>
+<body class="index-page">
 
-    <div class="header" id="myHeader">
-        <h2 class="h2header" id="aboutheader">About Me</h2>
-        <h2 class="h2header" id="skillheader">Skills</h2>
-        <h2 class="h2header" id="workexperienceheader">Work Experience</h2>
-        <h2 class="h2header" id="educationheader">Education</h2>
-        <h2 class="h2header" id="projectheader">Projects</h2>
-    </div>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-    <div id="frontpagecontainer">
-        <div id="frontpage">
-            <p id="title">Ruby Adkins</p>
-        </div>
-        <div id="frontpageimgdiv">
-            <img class="frontpageimg" id="imgup" src="images/IMG-4417.png">
-            <img class="frontpageimg" id="imgdown" src="images/IMG-4534.jpg">
-            <img class="frontpageimg" id="imgup" src="images/basketballgarage.JPG">
-            <img class="frontpageimg" id="imgdown" src="images/IMG-5809.JPG">
-        </div>
-    </div>
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/RiverLogo.png" width="80">
+        <!-- <h1 class="sitename">River's Portfolio</h1> -->
+      </a>
 
-    <script>
-        window.onscroll = function () { myFunction() };
-
-        var header = document.getElementById("myHeader");
- 
-        function myFunction() {
-            if (window.pageYOffset > 20) {
-                header.classList.add("sticky");
-                header.classList.remove("header");
-            } else {
-                header.classList.remove("sticky");
-                header.classList.add("header");
-            }
-        }
-
-        document.getElementById("aboutheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("aboutpage").offsetLeft, (document.getElementById("aboutpage").offsetTop) - 25)
-        });
-
-        document.getElementById("skillheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("skillpage").offsetLeft, (document.getElementById("skillpage").offsetTop) - 25)
-        });
-
-        document.getElementById("workexperienceheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("workexperience").offsetLeft, (document.getElementById("workexperience").offsetTop) - 25)
-        });
-
-        document.getElementById("educationheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("education").offsetLeft, (document.getElementById("education").offsetTop) - 25)
-        });
-
-        document.getElementById("projectheader").addEventListener('click', function () {
-            window.scrollTo(document.getElementById("project").offsetLeft, (document.getElementById("project").offsetTop) - 25)
-        });
-    </script>
-
-
-    <div id="aboutpage">
-        <div id="aboutpagetitle">About Me</div>
-        <div id="aboutpagecontainer">
-            <div id="aboutpageimgdiv">
-                <img id="aboutpageimg" src="images/IMG-4406.jpg">
-            </div>
-            <div id="aboutpagetextdiv">
-                <div id="aboutpagetextcontainer">
-                    <div class="aboutpagetext" id="aboutpagetext1">Hi There Traveler!<img src="images/wave.gif"
-                            id="wavegif"></div>
-                    <div class="aboutpagetext" id="aboutpagetext2">My name is Ruby Adkins</div>
-                    <div class="aboutpagetext" id="aboutpagetext3">A senior in high school, who is in love with
-                        the
-                        world of computer science.
-                        My passion with CS was fast-growing, and currently I want to explore all areas of the field and
-                        learn as much as I can.
-                        I hope to one day create experiences that empower the common person, and bring a little light
-                        into
-                        what sometimes seems like a dull, monotoned world.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="skillpage">
-        <div id="skillpagetitle">Skills</div>
-        <div id="skillpagecontainer">
-            <div id="technologyskilldiv">
-                <div id="technologyskillcontainer">
-                    <div class="skilltitle" id="webtechtitle">Web Technologies</div>
-                    <div id="technologyskilllistcontainer">
-                        <ul id="technologyskilllist">
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>Flask</li>
-                            <li>jQuery</li>
-                            <li>Socket.io</li>
-                            <li>MySQL</li>
-                            <li>Flask-SQLAlchemy</li>
-                            <li>Shiny</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div id="languageskilldiv">
-                <div id="languageskillcontainer">
-                    <div class="skilltitle">Programming Languages</div>
-                    <div class="bar python" id="py" data-skill="Python">80%</div>
-                    <div class="bar yellow javascript" data-skill="JavaScript">80%</div>
-                    <div class="bar green processing" data-skill="Processing">70%</div>
-                    <div class="bar blue r" data-skill="R">50%</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="workexperience">
-        <div id="workexperiencetitle">Work Experience</div>
-        <div id="workexperiencecontainer">
-            <div class="timeline">
-                <div class="entry">
-                    <div class="title">
-                        <h3>IT Assistant</h3>
-                        <p>Jun 2021 - Aug. 2021</p>
-                    </div>
-                    <div class="body">
-                        <p>James Madison University
-                        </p>
-                        <ul>
-                            <li>Maintain the IT equipment in the JMU BioPhys Building. Create and deploy disc images to
-                                update the university's computers. Building web applications to increase efficiency of
-                                IT
-                                work.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="title">
-                        <h3>Teaching Assistant</h3>
-                        <p>May 2021 - Jun. 2021</p>
-                    </div>
-                    <div class="body">
-                        <p>James Madison University
-                        </p>
-                        <ul>
-                            <li>Helped teach and run the Chemistry 120 class primarily for nursing and health science
-                                majors. Held
-                                3-4
-                                review sessions weekly to answer questions about content and prepare students for exams.
-                                Oversaw breakout room sessions and every 3hr lecture Monday-Thursday for the full 4
-                                weeks of
-                                class.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="title">
-                        <h3>Communications Intern</h3>
-                        <p>Jan. 2021 - May 2021, Sept. 2021 - Present</p>
-                    </div>
-                    <div class="body">
-                        <p>Saint Anne's-Belfield
-                        </p>
-                        <ul>
-                            <li>Worked on editing school chapels, live streaming sports games, conducting interviews for
-                                the
-                                school podcast, and writing articles for the school website.</li>
-                            <br>
-                            <li>A link to a published article of mine: <a
-                                    href="https://www.stab.org/news/post/~board/news/post/olivia-w-22-receives-first-division-1-offer-from-radford">Olivia
-                                    W. ’22 Receives first Division 1 Offer from Radford</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="title">
-                        <h3>Undergraduate Research</h3>
-                        <p>Jun. 2018 - July 2019, Jun. 2019 - Nov. 2019, May 2020 - Aug. 2020</p>
-                    </div>
-                    <div class="body">
-                        <p>James Madison University
-                        </p>
-                        <ul>
-                            <li>Biochemistry Research in Department of Chemistry and Biochemistry under the supervision
-                                of
-                                Dr. Christopher Berndsen. Helped assist in other student's research, worked to purify
-                                the
-                                protein HvPPa, and worked with Small-Angle X-ray Scattering Data.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div id="education">
-        <div id="educationtitle">Education</div>
-        <div id="educationcontainer">
-            <div class="educationsubtitle">High School</div>
-            <div class="educationlistcontainer">
-                <div class="items">
-                    <div class="items-head">
-                        <p>Saint Anne's-Belfield</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>2020-Present</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="items">
-                    <div class="items-head">
-                        <p>Stuart Hall School</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>2018-2020</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="educationcontainer">
-            <div class="educationsubtitle">College Experience</div>
-            <div class="educationlistcontainer">
-                <div class="items">
-                    <div class="items-head">
-                        <p>Intensive Spanish 1</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Date: May 2021 - June 2021</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Institution: James Madison University</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Course: Span 111</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Credits: 6</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="items">
-                    <div class="items-head">
-                        <p>Principles of Programming</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Date: May 2021 - June 2021</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Institution: James Madison University</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Course: CIS 221</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Credits: 3</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="educationcontainer">
-            <div class="educationlistcontainer">
-                <div class="items">
-                    <div class="items-head">
-                        <p>Precalculus with Trigonometry</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Date: May 2020 - August 2020</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Institution: Mary Baldwin University</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Course: Math 171</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Credits: 4</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="items">
-                    <div class="items-head">
-                        <p>Concepts of Chemistry</p>
-                        <hr>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Date: May 2020 - June 2020</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Institution: James Madison University</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Course: Chem 120</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <span>Credits: 3</span>
-                            <i class="fa fa-angle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="project">
-        <div id="projecttitle">Projects</div>
-        <div id="projectcontainer">
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc2">
-                    <div class="projectimg">
-                        <img src="images/elizathumbnail.PNG">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc2">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <h2>An Eliza Chatbot</h2>
-                        <div class="popupCloseButton2">&times;</div>
-                        <img src="images/elizathumbnail.PNG">
-                        <p>The original Eliza was one of the first chatbots created in the 1960s at the MIT Artificial
-                            Intelligence Laboratory. Eliza uses rogerian therapy to deconstruct the user's input to
-                            formulate a response. I created my own version of the Eliza using similar methods of
-                            deconstructing user input. However my Eliza strays away from acting as a professional
-                            therapist, and instead it is more of a casual pal to keep you company.
-                        </p>
-                        <a href="http://eliza-chatbot.me/" target="blank">See Website Here</a>
-                        <br>
-                        <a href="https://github.com/radkinz/eliza-chatbot" target="blank">See Github Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc4">
-                    <div class="projectimg">
-                        <img src="images/geneticalgo.PNG">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc4">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <h2> Genetic Algorithm</h2>
-                        <div class="popupCloseButton4">&times;</div>
-                        <img src="images/geneticalgo.PNG">
-                        <p> This program simulates natural selection, as the flappy birds evolve to learn how to fly through the pipes over time. 
-                            Each generation, the birds are judged by a fitness algorithm, which determines a bird's fitness by how many pipes they fly through. 
-                            A weighted probability drawing, based on fitness, is then used to pick two birds each generation to breed. 
-                            The two birds' genotypes are randomly mixed during the breeding process, with a slight chance of mutation, to create a new generation of flappy birds.
-                        </p>
-                        <a href="https://github.com/radkinz/Flappy-Bird-Genetic-Algo" target="blank">See Github Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc7">
-                    <div class="projectimg">
-                        <img class="projectimg" src="images/flappybirdImg.png">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc7">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <div class="popupCloseButton7">&times;</div>
-                        <h2>A Multiplayer Flappy Bird Game</h2>
-                        <img src="images/flappybirdImg.png">
-                        <p>A node.js application that uses Express and Socket.io to create a multiplayer flappy bird game, where users can play and connect real-time.
-                        </p>
-                        <a href="https://github.com/radkinz/multiplayer-flappy-bird" target="blank">See Github Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc5">
-                    <div class="projectimg">
-                        <img class="projectimg" src="images/mazegen.PNG">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc5">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <div class="popupCloseButton5">&times;</div>
-                        <h2>Maze Gen</h2>
-                        <img src="images/mazegen.PNG">
-                        <p>A maze generation visualizer algorithm written in vanilla javascript.
-                        </p>
-                        <a href="/maze-gen/" target="blank">See Demo Here</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc6">
-                    <div class="projectimg">
-                        <img class="projectimg" src="images/bwslthumbnail.PNG">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc6">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <div class="popupCloseButton6">&times;</div>
-                        <h2>BWSL Website</h2>
-                        <img src="images/bwslthumbnail.PNG">
-                        <p>A website for the Boo William's CVA Basketball Association.
-                        </p>
-                        <a href="https://bwslcentralva.com/" target="blank">See Website Here</a>
-                        <br>
-                        <a href="https://github.com/radkinz/bwslwebsite" target="blank">See Github Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projectimgcontainer">
-                <a class="trigger_popup_fricc3">
-                    <div class="projectimg">
-                        <img src="images/ardino.png">
-                    </div>
-                </a>
-
-                <div class="hover_bkgr_fricc3">
-                    <span class="helper"></span>
-                    <div class="popup">
-                        <h2>A Fun Arduino Project</h2>
-                        <div class="popupCloseButton3">&times;</div>
-                        <img src="images/ardino.png">
-                        <p> An Arduino project that controls a buzzer by outputting frequencies based on the mouse's y-location in a Processing program. 
-                            The LEDs light up based on the frequency values to act as a frequency monitor. When the user presses the mouse, a group of particles unleash across the screen with velocites determined by perlin noise. 
-                            The color of the particles are also determined by the y-pos of the mouse, and 
-                            the particle colors are outputted in a rgb light in the circuit. 
-                        </p>
-                        <a href="https://github.com/radkinz/ArduinoBuzzerControl" target="blank">See Github
-                            Repo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-
-            //popups for projects
-            $(".trigger_popup_fricc").click(function () {
-                $('.hover_bkgr_fricc').show();
-            });
-            $('.hover_bkgr_fricc').click(function () {
-                $('.hover_bkgr_fricc').hide();
-            });
-            $('.popupCloseButton').click(function () {
-                $('.hover_bkgr_fricc').hide();
-            });
-
-            $(".trigger_popup_fricc2").click(function () {
-                $('.hover_bkgr_fricc2').show();
-            });
-            $('.hover_bkgr_fricc2').click(function () {
-                $('.hover_bkgr_fricc2').hide();
-            });
-            $('.popupCloseButton2').click(function () {
-                $('.hover_bkgr_fricc2').hide();
-            });
-
-            $(".trigger_popup_fricc3").click(function () {
-                $('.hover_bkgr_fricc3').show();
-            });
-            $('.hover_bkgr_fricc3').click(function () {
-                $('.hover_bkgr_fricc3').hide();
-            });
-            $('.popupCloseButton3').click(function () {
-                $('.hover_bkgr_fricc3').hide();
-            });
-
-            $(".trigger_popup_fricc4").click(function () {
-                $('.hover_bkgr_fricc4').show();
-            });
-            $('.hover_bkgr_fricc4').click(function () {
-                $('.hover_bkgr_fricc4').hide();
-            });
-            $('.popupCloseButton4').click(function () {
-                $('.hover_bkgr_fricc4').hide();
-            });
-
-            $(".trigger_popup_fricc5").click(function () {
-                $('.hover_bkgr_fricc5').show();
-            });
-            $('.hover_bkgr_fricc5').click(function () {
-                $('.hover_bkgr_fricc5').hide();
-            });
-            $('.popupCloseButton5').click(function () {
-                $('.hover_bkgr_fricc5').hide();
-            });
-
-            $(".trigger_popup_fricc6").click(function () {
-                $('.hover_bkgr_fricc6').show();
-            });
-            $('.hover_bkgr_fricc6').click(function () {
-                $('.hover_bkgr_fricc6').hide();
-            });
-            $('.popupCloseButton6').click(function () {
-                $('.hover_bkgr_fricc6').hide();
-            });
-
-            $(".trigger_popup_fricc7").click(function () {
-                $('.hover_bkgr_fricc7').show();
-            });
-            $('.hover_bkgr_fricc7').click(function () {
-                $('.hover_bkgr_fricc7').hide();
-            });
-            $('.popupCloseButton7').click(function () {
-                $('.hover_bkgr_fricc7').hide();
-            });
-        </script>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="assets/resume/resume.pdf">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
     </div>
-    <div id="endpage">
-        <div>Thanks for Visiting!</div>
-        <button class="scrollToTopBtn">☝️</button>
-        <script>
+  </header>
 
+  <main class="main">
 
-            var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
-            var rootElement = document.documentElement
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-            function handleScroll() {
-                // Do something on scroll
-                var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
-                if ((rootElement.scrollTop / scrollTotal) > 0.80) {
-                    // Show button
-                    scrollToTopBtn.classList.add("showBtn")
-                } else {
-                    // Hide button
-                    scrollToTopBtn.classList.remove("showBtn")
-                }
-            }
+      <img src="assets/img/homepage.png" alt="" data-aos="fade-in">
 
-            function scrollToTop() {
-                // Scroll to top logic
-                rootElement.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                })
-            }
-            scrollToTopBtn.addEventListener("click", scrollToTop)
-            document.addEventListener("scroll", handleScroll)
+      <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <h2>River Adkins</h2>
+        <!-- <p>I <span class="typed" data-typed-items="Engineer, Design, Develop">Engineer</span><span class="typed-cursor typed-cursor--blink"></span></p> -->
+        <p>MIT Mechanical Engineering and Design Student</p>
+      </div>
 
+    </section><!-- /Hero Section -->
 
-        </script>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">River's Portfolio</h3>
+      <p>Always looking to integrate engineering, design, and play to drive unique and fun creations.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/radkinz"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/radkinz.designs/"><i class="bi bi-instagram"></i></a>
+        <a href="https://linkedin.com/in/river-adkins-25b893216"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">River's Portfolio</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
     </div>
-    <div id="footer">
-        <span class="dot"></span>
-        <p>Made and Designed By Ruby Adkins</p><span class="dot"></span>
-    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
