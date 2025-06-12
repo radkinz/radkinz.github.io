@@ -1,334 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rainwell</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="../assets/img/RiverLogo.png" rel="icon">
-  <link href="../assets/img/RiverLogo.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-=  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="../assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Nov 04 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="../assets/img/RiverLogo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="../portfolio/portfolio.css" />
 </head>
-
-<body class="portfolio-details-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="../index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img src="../assets/img/RiverLogo.png" width="80">
+<body>
+  <header class="header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/img/RiverLogo.png" height="50" alt="River Logo" />
       </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../portfolio.html">Portfolio</a></li>
-          <li><a href="../assets/resume/resume.pdf">Resume</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../assets/resume/resume.pdf" target="_blank">Resume</a>
+        <a href="../contact.html">Contact</a>
       </nav>
-
     </div>
   </header>
 
-  <main class="main">
+  <div class="page-title">
+    <h1>Rainwell</h1>
+    <p>4.021 Final Project</p>
+  </div>
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Rainwell</h1>
-              <p class="mb-0">4.021 Final Project</p>
-            </div>
-          </div>
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>/</span>
+    <a href="../portfolio.html">Portfolio</a> <span>/</span>
+    <strong>Rainwell</strong>
+  </div>
+
+  <main class="container">
+    <div class="slider-info-wrap">
+      <div class="slider" id="slider1">
+        <div class="slides">
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-1.jpg" alt="Rainwell 1"></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-2.jpg" alt="Rainwell 2"></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-3.jpg" alt="Rainwell 3"></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-4.jpg" alt="Rainwell 4"></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-5.jpg" alt="Rainwell 5"></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-6.jpg" alt="Rainwell 6"></div>
         </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../portfolio.html">Portfolio</a></li>
-            <li class="current">Rainwell</li>
-          </ol>
+        <div class="nav-arrows">
+          <button class="arrow prev">&#8592;</button>
+          <button class="arrow next">&#8594;</button>
         </div>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide align-items-center">
-                  <img src="../assets/img/portfolio/inflatable-1.jpg" width=100% alt="">
-                </div>
-
-                <div class="swiper-slide align-items-center"">
-                  <img src=" ../assets/img/portfolio/inflatable-2.jpg" width=100% alt="">
-                </div>
-
-                <div class="swiper-slide align-items-center"">
-                  <img src=" ../assets/img/portfolio/inflatable-3.jpg" width=100% alt="">
-                </div>
-
-                <div class="swiper-slide align-items-center"">
-                  <img src=" ../assets/img/portfolio/inflatable-4.jpg" width=100% alt="">
-                </div>
-
-                <div class="swiper-slide align-items-center"">
-                  <img src=" ../assets/img/portfolio/inflatable-5.jpg" width=100% alt="">
-                </div>
-
-                <div class="swiper-slide align-items-center"">
-                  <img src=" ../assets/img/portfolio/inflatable-6.jpg" width=100% alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Rainwell</h3>
-              <ul>
-                <li><strong>Category</strong>: Design/Art</li>
-                <li><strong>Tools Used</strong>: Rhino, Illustrator</li>
-                <li><strong>Project date</strong>: December 18, 2024</li>
-              </ul>
-            </div>
-          </div>
-          <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-            <h2>Project Description</h2>
-            <p>
-              How can we use inflatables to create soft supports around MIT?
-              This was the prompt for our 4.021, How to Design, final project.
-              In a team of 3, we decided that we wanted to accomplish this by going as big as possible.
-              We built a 70 foot tall centerpiece in the middle of MIT's building 3 stairwell that mimics rain
-              through sound, scent, and function to provide stress relief.
-              <br> <br>
-              We explored our rain concept through adding blue lighting to create a look of rain drops.
-              We had a speaker to play ambient rain noise, and during our critique, we passed out an essential oil to
-              complete the multi-sensory component of our installation.
-              <br> <br>
-              Leading up to the critique, we did a lot of prototyping as well as concept exploration.
-              We created a key image to guide our concept, as well as, a site diagram to convey how our
-              installation impacts the environment around it. Before we landed on our concept, we did a lot of research
-              on how students currently interact with the stairwell. We found that many students are glued to their
-              phone screen as they walk up the steps, not
-              taking anytime to pay attention to the space they are in. By adding our centerpiece, we gave students a
-              reason to look up and take in the surronding.
-              Something fun for them to touch and play with. By integrating rain and multi-sensory aspects into our
-              installation,
-              we helped relieve students stress during finals week and give them something to smile about on their way
-              to their exam.
-            </p>
-          </div>
-
-
-          <h2 id="iterationHeading" data-aos="fade-up" data-aos-delay="300">Concept Drawings/Digrams</h2>
-          <div class="bottom-slider" data-aos="fade-up" data-aos-delay="300">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-keyImage.png" height=400px alt="">
-                  <p>Key Image</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-drawing.png" height=400px alt="">
-                  <p>Drawing made in Rhino and Illustrator</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-siteDiagram.png" height=400px alt="">
-                  <p>Site Diagram</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-rhino.png" height=400px alt="">
-                  <p>Rhino 3D Model</p>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <h2 id="iterationHeading" data-aos="fade-up" data-aos-delay="300">Prototypes/Testing</h2>
-          <div class="bottom-slider" data-aos="fade-up" data-aos-delay="300">
-            <div class="portfolio-details-slider swiper init-swiper">
-
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-prototyping-1.png" height=400px alt="">
-                  <p>25ft Prototype</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-protyping-3.png" height=400px alt="">
-                  <p>25ft Prototype</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-prototyping-4.png" height=400px alt="">
-                  <p>Construction of final inflatable</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="../assets/img/portfolio/inflatable-prototyping-5.png" height=400px alt="">
-                  <p>Test installing in the stairwell</p>
-                </div>
-
-                <div class="swiper-slide">
-                  <video height="400px" width="90%" controls muted>
-                    <source src="../assets/img/portfolio/inflatable-prototyping-2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                  <p>Testing movement in the stairwell</p>
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-        </div>
-
+        <div class="nav-dots"></div>
       </div>
 
-    </section><!-- /Portfolio Details Section -->
+      <div class="project-card">
+        <h2>Rainwell</h2>
+        <hr>
+        <p><strong>Category:</strong> Design / Art</p>
+        <p><strong>Tools Used:</strong> Rhino, Illustrator</p>
+        <p><strong>Project date:</strong> December 18, 2024</p>
+      </div>
+    </div>
 
+    <div class="section">
+      <h2>Project Description</h2>
+      <p>This was the final project for 4.021 (How to Design). Our team created a 70-foot inflatable installation inside MIT's Building 3 stairwell to explore stress relief through sound, scent, and soft interactive design.</p>
+      <p>We integrated blue lighting, ambient rain audio, and essential oil scents into the installation. Our intent was to encourage students to look up, pause, and interact with the space—especially during finals. The piece transformed a busy vertical corridor into a sensory moment of calm and playfulness.</p>
+    </div>
+
+    <div class="section">
+      <h2>Concept Drawings & Diagrams</h2>
+      <div class="slider" id="slider2">
+        <div class="slides">
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-keyImage.png" alt="Key Image"><div class="caption">Key Image</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-drawing.png" alt="Drawing"><div class="caption">Drawing made in Rhino and Illustrator</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-siteDiagram.png" alt="Site Diagram"><div class="caption">Site Diagram</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-rhino.png" alt="Rhino Model"><div class="caption">Rhino 3D Model</div></div>
+        </div>
+        <div class="nav-arrows">
+          <button class="arrow prev">&#8592;</button>
+          <button class="arrow next">&#8594;</button>
+        </div>
+        <div class="nav-dots"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Prototypes & Testing</h2>
+      <div class="slider" id="slider3">
+        <div class="slides">
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-prototyping-1.png" alt="25ft Prototype"><div class="caption">25ft Prototype</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-protyping-3.png" alt="25ft Prototype 2"><div class="caption">Another prototype stage</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-prototyping-4.png" alt="Construction"><div class="caption">Constructing the final inflatable</div></div>
+          <div class="slide"><img src="../assets/img/portfolio/inflatable-prototyping-5.png" alt="Stairwell Test"><div class="caption">Test installing in the stairwell</div></div>
+          <div class="slide">
+            <video height="400" controls muted>
+              <source src="../assets/img/portfolio/inflatable-prototyping-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="caption">Testing movement in stairwell</div>
+          </div>
+        </div>
+        <div class="nav-arrows">
+          <button class="arrow prev">&#8592;</button>
+          <button class="arrow next">&#8594;</button>
+        </div>
+        <div class="nav-dots"></div>
+      </div>
+    </div>
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer class="footer">
     <div class="container">
-      <h3 class="sitename">River's Portfolio</h3>
-      <p>Always looking to integrate engineering, design, and play to drive unique and fun creations.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/radkinz"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/radkinz.designs/"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/river-adkins-25b893216"><i class="bi bi-linkedin"></i></a>
+      <h3>River's Portfolio</h3>
+      <p><em>Always looking to integrate engineering, design, and play to drive unique and fun creations.</em></p>
+      <div class="social-links">
+        <a href="https://github.com/radkinz" class="social-icon" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.instagram.com/radkinz.designs/" class="social-icon" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/river-adkins-25b893216" class="social-icon" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
       </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">River's Portfolio</strong> <span>All Rights
-            Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+      <p class="copyright">
+        <span>Copyright</span> <strong>River's Portfolio</strong> <span>All Rights Reserved</span>
+      </p>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
+  <script src="../portfolio/portfolio-slider.js" defer></script>
 </body>
-
 </html>
