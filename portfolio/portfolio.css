@@ -31,7 +31,8 @@ body {
   .breadcrumb {
     background: #1a1a1a;
     padding: 1rem 2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+
   }
   
   .breadcrumb a {
@@ -301,5 +302,16 @@ body {
   
   .scroll-top:hover {
     background-color: #90cdf4;
+  }
+  
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .animate-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
