@@ -335,6 +335,11 @@
       transform: rotate(10deg);
     }
 
+    /* Default: hide menu toggle on desktop */
+    .menu-toggle {
+      display: none;
+    }
+
 
     /* Here the scale changes from 0 to 1. To add the bounciness 
 effect, the scale is set to 1.25 midway through the animation
@@ -363,12 +368,65 @@ to give the animation a nicer effect. */
         transform: scale(0);
       }
     }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero-content {
+        padding-left: 1.5rem;
+        padding-top: 35vh;
+      }
+
+      .hero h2 {
+        font-size: 2.4rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      /* Replace nav with hamburger on mobile */
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 60vw;
+        background: black;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+        z-index: 2000;
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 2000;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
     <a href="index.html"><img src="assets/img/RiverLogo.png" alt="River Logo" height="50" /></a>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="bi bi-list"></i>
+    </button>
+
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -465,6 +523,12 @@ to give the animation a nicer effect. */
       () => bubble.css({ 'animation-name': 'shrink', 'animation-duration': '0.1s' })
     );
 
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
 
 
