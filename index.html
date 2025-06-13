@@ -2,128 +2,475 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>River Adkins</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="assets/img/RiverLogo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    :root {
+      --accent-color: #afd8f3;
+    }
 
-  <!-- Favicons -->
-  <link href="assets/img/RiverLogo.png" rel="icon">
-  <link href="assets/img/RiverLogo.png" rel="apple-touch-icon">
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      background: black;
+      color: #fafafa;
+      overflow-x: hidden;
+    }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      padding: 1rem 5vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    header.scrolled {
+      background: #000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #fafafa;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding-top: 0vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-content {
+      padding-left: 5vw;
+      padding-top: 45vh;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 64px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 5px 0 0 0;
+      font-size: 26px;
+    }
+
+    .typed-cursor {
+      font-weight: 400;
+      font-size: 2.0rem;
+      color: var(--accent-color);
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .footer-marquee {
+      background-color: black;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-top: 2rem;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: #afd8f3;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    @keyframes slide-text {
+      0% {
+        transform: translateX(100%);
+      }
 
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Nov 04 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .footer {
+      background: black;
+      color: #fafafa;
+      text-align: center;
+      padding-top: 0;
+    }
+
+
+
+
+    .footer-content {
+      background-color: black;
+      padding: 0;
+      text-align: center;
+      margin-bottom: 3rem;
+
+    }
+
+    .footer-content h3 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-content p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-icons a {
+      width: 44px;
+      height: 44px;
+      background: #a6d8f0;
+      color: #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      background: #82c5f2;
+      /* darker blue */
+      transform: scale(1.15);
+    }
+
+    .hero-name {
+      font-size: 4rem;
+      letter-spacing: -1px;
+
+    }
+
+    .hero-name {
+      transform: scale(0.95);
+      opacity: 0;
+      animation: pop-in 1s ease forwards;
+    }
+
+    @keyframes pop-in {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-60px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(60px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    header {
+      animation: slideDown 0.8s ease-out forwards;
+    }
+
+
+
+    .hero p {
+      opacity: 0;
+      animation: slideInRight 1s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    .hero-name span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(-30px) scale(0.8) rotate(-5deg);
+      animation: bob-in 0.4s ease-out forwards;
+    }
+
+    @keyframes bob-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.8) rotate(-10deg);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(5px) scale(1.1) rotate(5deg);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+    }
+
+    #name-animated-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    #SpeechBubble {
+      position: absolute;
+      top: -65px;
+      right: -20px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 1.25rem;
+      transform: scale(0);
+      animation-fill-mode: forwards;
+      z-index: 100;
+      white-space: nowrap;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #SpeechBubble::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px;
+      border-color: var(--accent-color) transparent transparent var(--accent-color);
+      transform: rotate(10deg);
+    }
+
+
+    /* Here the scale changes from 0 to 1. To add the bounciness 
+effect, the scale is set to 1.25 midway through the animation
+to give the animation a nicer effect. */
+    @keyframes expand-bounce {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Here the scale simply goes from 1 back to 0 */
+    @keyframes shrink {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+    }
+  </style>
 </head>
 
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img src="assets/img/RiverLogo.png" width="80">
-        <!-- <h1 class="sitename">River's Portfolio</h1> -->
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="assets/resume/resume.pdf">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/img/RiverLogo.png" alt="River Logo" height="50" /></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="assets/resume/resume.pdf" target="_blank">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="main">
+  <main class="hero">
+    <img src="assets/img/homepage.png">
+    <div class="hero-content">
+      <h2 class="hero-name" id="name-animated-wrapper">
+        <span id="name-animated">
+          <span>R</span><span>i</span><span>v</span><span>e</span><span>r</span>
+          <span>A</span><span>d</span><span>k</span><span>i</span><span>n</span><span>s</span>
+        </span>
+        <div id="SpeechBubble"><span class="waving-hand">👋</span></div>
+      </h2>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/homepage.png" alt="" data-aos="fade-in">
 
-      <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h2>River Adkins</h2>
-        <!-- <p>I <span class="typed" data-typed-items="Engineer, Design, Develop">Engineer</span><span class="typed-cursor typed-cursor--blink"></span></p> -->
-        <p>MIT Mechanical Engineering in Robotic Design Student</p>
-      </div>
-
-    </section><!-- /Hero Section -->
-
+      <p>I am <span class="typed" data-typed-items="an engineer, a designer, a programmer"></span></p>
+    </div>
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">River's Portfolio</h3>
-      <p>Always looking to design and build better systems.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/radkinz"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/radkinz.designs/"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/river-adkins-25b893216"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">River's Portfolio</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Website Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+  <footer>
+    <div class="footer-marquee">
+      <div class="marquee-track">
+        <span>
+          ENGINEER • DESIGNER • BUILDER • RESEARCHER • ROBOTICIST • VISUAL THINKER • COLLABORATOR •
+          ENGINEER • DESIGNER • BUILDER • RESEARCHER • ROBOTICIST • VISUAL THINKER • COLLABORATOR •
+        </span>
       </div>
     </div>
+
+
+    <div class="footer-content">
+      <h3>River's Portfolio</h3>
+      <p><em>Always looking to design and build better systems.</em></p>
+
+      <div class="social-icons">
+        <a href="https://github.com/radkinz" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/radkinz.designs/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://linkedin.com/in/river-adkins-25b893216" aria-label="LinkedIn"><i
+            class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const typedEl = document.querySelector('.typed');
+      if (typedEl) {
+        const items = typedEl.getAttribute('data-typed-items');
+        if (items) {
+          new Typed('.typed', {
+            strings: items.split(',').map(s => s.trim()),
+            typeSpeed: 80,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true
+          });
+        }
+      }
+    });
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const letters = document.querySelectorAll('#name-animated span');
+      letters.forEach((letter, i) => {
+        letter.style.animationDelay = `${i * 0.08}s`;
+      });
+    });
+
+    const nameArea = $('#name-animated-wrapper');
+    const bubble = $('#SpeechBubble');
+
+    nameArea.hover(
+      () => bubble.css({ 'animation-name': 'expand-bounce', 'animation-duration': '0.25s' }),
+      () => bubble.css({ 'animation-name': 'shrink', 'animation-duration': '0.1s' })
+    );
+
+
+
+
+
+
+  </script>
 
 </body>
 
