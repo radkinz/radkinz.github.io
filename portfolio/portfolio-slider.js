@@ -82,33 +82,49 @@ function applyAnimations() {
 function revealOnScroll() {
     const animated = document.querySelectorAll('.animate-fade-up');
     const triggerY = window.innerHeight; // or use full viewport height
-  
+
     animated.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < triggerY) {
-        el.classList.add('visible');
-      }
+        const rect = el.getBoundingClientRect();
+        if (rect.top < triggerY) {
+            el.classList.add('visible');
+        }
     });
-  }
-  
-  window.addEventListener('load', () => {
+}
+
+window.addEventListener('load', () => {
     applyAnimations();
-  
+
     // force a layout pass before triggering visibility
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        revealOnScroll(); // now guaranteed to fire with layout settled
-      });
+        requestAnimationFrame(() => {
+            revealOnScroll(); // now guaranteed to fire with layout settled
+        });
     });
-  });
-  
-  document.addEventListener('scroll', revealOnScroll);
-  
-  window.addEventListener('load', () => {
+});
+
+document.addEventListener('scroll', revealOnScroll);
+
+window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-      preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 0.5s ease';
-      setTimeout(() => preloader.style.display = 'none', 500);
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => preloader.style.display = 'none', 500);
     }
-  });
+});
+
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
