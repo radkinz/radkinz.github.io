@@ -51,14 +51,65 @@ menuToggle.addEventListener('click', () => {
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
     });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('.animate-up').forEach(el => {
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-up').forEach(el => {
     observer.observe(el);
-  });
-  
+});
+// Wait for DOM
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Initialize Isotope
+    const grid = document.querySelector('.isotope-container');
+    const iso = new Isotope(grid, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'masonry',
+        masonry: {
+            columnWidth: '.portfolio-sizer',
+            gutter: 20,
+            fitWidth: true
+        }
+    });
+
+    // Wait for images to load before initial layout
+    imagesLoaded(grid, () => {
+        iso.layout();
+    });
+
+    // Filter buttons
+    const filters = document.querySelectorAll('.portfolio-filters li');
+    filters.forEach(button => {
+        button.addEventListener('click', e => {
+            e.preventDefault();
+
+            const filterValue = e.target.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
+
+            // Refresh layout after image filtering
+            imagesLoaded(grid, () => {
+                iso.layout();
+            });
+
+            // Update UI active class
+            filters.forEach(btn => btn.classList.remove('filter-active'));
+            e.target.classList.add('filter-active');
+        });
+    });
+
+    // Responsive relayout (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            iso.layout();
+        }, 200);
+    });
+
+
+    
+});
