@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rgifier</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="../assets/img/RiverLogo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="../portfolio/portfolio.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/img/RiverLogo.png" height="50" alt="River Logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../assets/resume/resume.pdf" target="_blank">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-title">
+    <h1>The Rgifier</h1>
+    <p>Automated SAXS Data Processing and Analysis for Carbohydrates and Proteins</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>/</span>
+    <a href="../portfolio.html">Portfolio</a> <span>/</span>
+    <strong>The Rgifier</strong>
+  </div>
+
+  <main class="container">
+    <div class="slider-info-wrap">
+      <div class="slider" id="slider1">
+        <div class="slides">
+          <div class="slide">
+            <img src="../assets/img/portfolio/saxsPoster.png" alt="SAXS Poster">
+            <div class="caption">Poster presented at Lawrence Berkeley ALS User Meeting</div>
+          </div>
+        </div>
+        <div class="nav-arrows">
+          <button class="arrow prev">&#8592;</button>
+          <button class="arrow next">&#8594;</button>
+        </div>
+        <div class="nav-dots"></div>
+      </div>
+
+      <div class="project-card">
+        <h2>The Rgifier</h2>
+        <hr>
+        <p><strong>Category:</strong> Research</p>
+        <p><strong>Tools Used:</strong> Data Analysis, Python, R</p>
+        <p><strong>Project date:</strong> Summer 2023</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Project Description</h2>
+      <p>During the summer of 2023, I conducted research at James Madison University's biochemistry department in partnership with the Lawrence Berkeley National Laboratory. I developed a software tool—The Rgifier—for automating SAXS (Small Angle X-ray Scattering) data processing.</p>
+      <p>The software processes 2800+ frames of SAXS data collected from 96-well plates, drastically improving on the manual processing time (~2 minutes per well using RAW) by producing key values (Rg, I0, mass, volume, etc.) in ~4 seconds for an entire dataset.</p>
+      <p>The Rgifier was tested against known standards and proved highly accurate, especially for protein analysis. This work culminated in a poster presentation at the Advanced Light Source User Meeting at Lawrence Berkeley.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <h3>River's Portfolio</h3>
+      <p><em>Always looking to integrate engineering, design, and play to drive unique and fun creations.</em></p>
+      <div class="social-links">
+        <a href="https://github.com/radkinz" class="social-icon" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.instagram.com/radkinz.designs/" class="social-icon" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/river-adkins-25b893216" class="social-icon" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+      <p class="copyright">
+        <span>Copyright</span> <strong>River's Portfolio</strong> <span>All Rights Reserved</span>
+      </p>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="../portfolio/portfolio-slider.js" defer></script>
+</body>
+</html>
