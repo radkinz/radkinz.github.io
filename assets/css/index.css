@@ -595,3 +595,60 @@ a:hover {
     color: #888;
     margin: 0 0.5rem;
 }
+
+.star-frame {
+    position: relative;
+    display: inline-block;
+    padding: 2rem; /* gives room for stars */
+  }
+  
+  .star-frame {
+    overflow: visible;
+  }
+  
+
+.star-frame .star {
+    position: absolute;
+    font-size: 5rem;
+    color: var(--accent-color);
+    animation: twinkle 2s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+
+
+.star {
+    position: absolute;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  
+
+/* Position stars at each corner */
+.star.top-left    { top: 0; left: 0; }
+
+.star.bottom-right{ bottom: 0; right: 0; }
+
+/* Star animation */
+@keyframes twinkle {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+.star-frame {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
