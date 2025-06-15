@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jetson AGX Yahboom Robot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="../assets/img/RiverLogo.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../portfolio/portfolio.css" />
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img src="../assets/img/RiverLogo.png" alt="River Logo" height="50" /></a>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../portfolio.html">Portfolio</a>
+            <a href="../assets/resume/resume.pdf" target="_blank">Resume</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <h1>Jetson AGX Yahboom Robot</h1>
+        <p>MIT LIDS UROP Project — Spring 2025</p>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> <span>/</span>
+        <a href="../portfolio.html">Portfolio</a> <span>/</span>
+        <strong>Jetson AGX Yahboom Robot</strong>
+    </div>
+
+    <main class="container">
+        <div class="slider-info-wrap">
+            <div class="slider" id="slider1">
+                <div class="slides">
+                    <div class="slide"><img src="../assets/img/portfolio/side.png" alt="Front View"></div>
+                    <div class="slide"><img src="../assets/img/portfolio/iso.png" alt="Isometric View"></div>
+                    <div class="slide"><img src="../assets/img/portfolio/front.png"
+                            alt="CAD Drawing"></div>
+                            <div class="slide"><img src="../assets/img/portfolio/yahboomDrawing.png"
+                                alt="CAD Drawing"></div>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow prev">&#8592;</button>
+                    <button class="arrow next">&#8594;</button>
+                </div>
+                <div class="nav-dots"></div>
+            </div>
+
+            <div class="project-card">
+                <h2>Jetson AGX Yahboom Robot</h2>
+                <hr>
+                <p><strong>Category:</strong> Research / Robotics / Mechanisms</p>
+                <p><strong>Tools Used:</strong> Jetson AGX, ROS2, Flask, OpenCV, Control Theory, OnShape</p>
+                <p><strong>Project date:</strong> Spring 2025</p>
+                
+               
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>This platform was developed as part of my UROP with the MIT Laboratory for Information and Decision
+                Systems (LIDS). I fully customized a Yahboom ROSMaster X3 robot kit to support the NVIDIA Jetson Orin AGX
+                and built a multi-modal control system using ROS2. The goal was to build a robust and extensible
+                research platform to support both single-robot navigation and future multi-agent studies.</p>
+            <p>I handled both the mechanical integration, full software stack, and created a simulation-ready CAD
+                model for ongoing development.</p>
+        </div>
+
+        <div class="section">
+            <h2>Core Features</h2>
+            <ul>
+                <li>4-wheel mecanum drive base for omnidirectional movement</li> <br>
+                <li>Jetson Orin AGX as the onboard computer (replacing Raspberry Pi or Jetson Nano)</li> <br>
+                <li>AprilTag-based localization</li> <br>
+                <li>IMU + Encoder sensor suite for indoor localization</li> <br>
+                <li>Wireless control interface built with Flask</li> <br>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Demo Videos</h2>
+            <div class="slider" id="slider2" data-disable-autoplay>
+                <div class="slides">
+                    <div class="slide">
+                        <video height="400" controls muted>
+                            <source src="../assets/img/portfolio/IMG_3414.MOV" type="video/mp4">
+                        </video>
+                        <div class="caption">Following a moving AprilTag with PID control.
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <video height="400" controls muted>
+                            <source src="../assets/img/portfolio/IMG_3389.MOV" type="video/mp4">
+                        </video>
+                        <div class="caption">Sending a vector command through the Flask-based UI.</div>
+                    </div>
+                    <div class="slide">
+                        <video height="400" controls muted>
+                            <source src="../assets/img/portfolio/IMG_3379.MOV" type="video/mp4">
+                        </video>
+                        <div class="caption">Executing a hard-coded square path using command line input.</div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow prev">&#8592;</button>
+                    <button class="arrow next">&#8594;</button>
+                </div>
+                <div class="nav-dots"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Architecture</h2>
+            <p>
+              Our ROS2 system was built on the Yahboom ROSMaster X3 platform, with the Jetson AGX running a layered architecture of perception, filtering, and motion-planning nodes. Final drive commands were sent to the Yahboom expansion board via the standard <code>/cmd_vel</code> topic, which the Yahboom-provided ROS driver node handled internally to generate motor PWM signals.
+            </p>
+            <p>
+              The ROS2 node graphs below visualize this structure. The full graph shows all defined nodes and their topic connections, while the filtered graph illustrates the active message flow — particularly how sensor fusion, pose estimation, and bin tracking nodes contributed data that ultimately informed the velocity commands issued to the robot’s motors via the expansion board.
+            </p>
+
+            <div class="slider" id="slider-ros2">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="../assets/img/portfolio/node_graph_full.png" alt="Full ROS2 Node Graph">
+                        <div class="caption">Complete ROS2 graph generated with <code>rqt_graph</code></div>
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/img/portfolio/node_graph_topic_active.png" alt="Active ROS2 Topics">
+                        <div class="caption">Filtered graph showing only active topics</div>
+                    </div>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow prev">&#8592;</button>
+                    <button class="arrow next">&#8594;</button>
+                </div>
+                <div class="nav-dots"></div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h2>Summer Research Goals</h2>
+            <p>This summer, I'm scaling the platform to support coordinated multi-robot navigation and dynamic formation
+                control.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-marquee">
+            <div class="marquee-track">
+                <span>
+                    MAKER • LEADER • BUILDER • RESEARCHER • ROBOTICIST • HARD WORKER • COLLABORATOR •
+                    MAKER • LEADER • BUILDER • RESEARCHER • ROBOTICIST • HARD WORKER • COLLABORATOR •
+                </span>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h3>River's Portfolio</h3>
+            <p><em>Always looking to design and build better systems.</em></p>
+
+            <div class="social-icons">
+                <a href="https://github.com/radkinz" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.instagram.com/radkinz.designs/" aria-label="Instagram"><i
+                        class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com/in/river-adkins-25b893216" aria-label="LinkedIn"><i
+                        class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <div class="loader-text">good things are worth waiting for :)</div>
+        </div>
+    </div>
+
+    <script src="../portfolio/portfolio-slider.js"></script>
+</body>
+
+</html>
