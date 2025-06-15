@@ -1,7 +1,5 @@
 // === PORTFOLIO SLIDER JS ===
-
-function initSlider(id) {
-    const slider = document.getElementById(id);
+function initSlider(slider) {
     const slides = slider.querySelector('.slides');
     const dotsContainer = slider.querySelector('.nav-dots');
     const total = slides.children.length;
@@ -38,17 +36,23 @@ function initSlider(id) {
     }
 
     updateSlide();
-    setInterval(() => {
-        index = (index + 1) % total;
-        updateSlide();
-    }, 5000);
+
+    // ✅ Autoplay only if not disabled
+    if (!slider.hasAttribute('data-disable-autoplay')) {
+        slider.autoplayInterval = setInterval(() => {
+            index = (index + 1) % total;
+            updateSlide();
+        }, 5000);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.slider').forEach((el) => {
-        initSlider(el.id);
+    document.querySelectorAll('.slider').forEach((slider) => {
+        initSlider(slider);
     });
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
