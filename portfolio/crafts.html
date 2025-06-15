@@ -13,30 +13,62 @@
     <link rel="stylesheet" href="../portfolio/portfolio.css" />
     <style>
         .project-section {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 2rem;
-          align-items: flex-start;
-          margin-bottom: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 4rem;
         }
-      
+
         .project-text {
-          flex: 1 1 400px;
-          min-width: 300px;
+            flex: 1 1 400px;
+            min-width: 300px;
         }
-      
+
         .project-slider {
-          flex: 1 1 400px;
-          min-width: 300px;
+            flex: 1 1 400px;
+            min-width: 300px;
         }
-      
+
         @media (max-width: 768px) {
-          .project-section {
-            flex-direction: column;
-          }
+            .project-section {
+                flex-direction: column;
+            }
         }
-      </style>
-      
+
+        @media (max-width: 768px) {
+            .section {
+                display: flex;
+                flex-direction: column;
+                gap: 0rem;
+                /* tighter gap between image and text */
+            }
+
+            .section .slider,
+            .section p {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .section .slides {
+                margin-bottom: 0;
+            }
+
+            .section .slide {
+                padding-bottom: 0;
+            }
+
+            .section h2 {
+                margin-bottom: 0.5rem;
+            }
+
+            .project-text {
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -66,32 +98,39 @@
     </div>
 
     <main class="container">
-       
+
         <div class="section project-section">
             <div class="project-text">
-              <h2>Fort Build</h2>
-              <p>Each fall, my dorm comes together to build a huge wooden fort in our courtyard. I helped with the design and CAD effort in SolidWorks for this upcoming build, contributing to the structural framing across three floors—from joists and cross-bracing to safety railings.</p>
+                <h2>Fort Build</h2>
+                <p>Each fall, my dorm comes together to build a huge wooden fort in our courtyard. I helped with the
+                    design and CAD effort in SolidWorks for this upcoming build, contributing to the structural framing
+                    across three floors—from joists and cross-bracing to safety railings.</p>
             </div>
             <div class="project-slider">
-              <div class="slider" id="slider-fort" data-disable-autoplay>
-                <div class="slides">
-                  <div class="slide"><img src="../assets/img/portfolio/small-projects/fort-iso.png" alt="Isometric view of fort"></div>
-                  <div class="slide"><img src="../assets/img/portfolio/small-projects/fort drawing.png" alt="Fort drawing"></div>
-                  <div class="slide"><img src="../assets/img/portfolio/small-projects/fort-top.png" alt="Top view of fort"></div>
+                <div class="slider" id="slider-fort" data-disable-autoplay>
+                    <div class="slides">
+                        <div class="slide"><img src="../assets/img/portfolio/small-projects/fort-iso.png"
+                                alt="Isometric view of fort"></div>
+                        <div class="slide"><img src="../assets/img/portfolio/small-projects/fort drawing.png"
+                                alt="Fort drawing"></div>
+                        <div class="slide"><img src="../assets/img/portfolio/small-projects/fort-top.png"
+                                alt="Top view of fort"></div>
+                    </div>
+                    <div class="nav-arrows">
+                        <button class="arrow prev">&#8592;</button>
+                        <button class="arrow next">&#8594;</button>
+                    </div>
+                    <div class="nav-dots"></div>
                 </div>
-                <div class="nav-arrows">
-                  <button class="arrow prev">&#8592;</button>
-                  <button class="arrow next">&#8594;</button>
-                </div>
-                <div class="nav-dots"></div>
-              </div>
             </div>
-          </div>
+        </div>
 
-          <div class="section project-section">
+        <div class="section project-section">
             <div class="project-text">
-              <h2>3D Printing</h2>
-              <p>During my UROP, I needed a better way to manage loose screws, zip ties, and miscellaneous tools. So I opened up OnShape, sketched out an idea, and printed a custom desk organizer that now lives permanently next to my robot.</p>
+                <h2>3D Printing</h2>
+                <p>During my UROP, I needed a better way to manage loose screws, zip ties, and miscellaneous tools. So I
+                    opened up OnShape, sketched out an idea, and printed a custom desk organizer that now lives
+                    permanently next to my robot.</p>
             </div>
             <div class="slider" id="slider2" data-disable-autoplay>
                 <div class="slides">
@@ -105,13 +144,14 @@
                 </div>
                 <div class="nav-dots"></div>
             </div>
-          </div>
+        </div>
 
 
-          <div class="section project-section">
+        <div class="section project-section">
             <div class="project-text">
-              <h2>Graphic Design</h2>
-              <p>For awhile now, I have been designing logos and posters using Adobe Illustrator as a hobby. These are various designs that I made for some MIT student groups.</p>
+                <h2>Graphic Design</h2>
+                <p>For awhile now, I have been designing logos and posters using Adobe Illustrator as a hobby. These are
+                    various designs that I made for some MIT student groups.</p>
             </div>
             <div class="slider" id="slider2" data-disable-autoplay>
                 <div class="slides">
@@ -128,13 +168,19 @@
                 </div>
                 <div class="nav-dots"></div>
             </div>
-          </div>
+        </div>
 
-          <div class="section project-section">
+        <div class="section project-section">
             <div class="project-text">
                 <h2>Painting</h2>
-                <p>Painting and other methods of art do not come naturally to me, but I still try to be creative when I can and have fun with it. I recently have been very into clothing alterations, so the first picture shows a jean jacket that I painted the subway surfers logo on the back. To aid my painting efforts, I lasercut a cardboard stencil.</p> 
-                    <p>The second picture is a mural that I made of a cat with some groovy lines. I am really into the funky style of art which I tried to recreate. The paint was more watery than expected, which is why it started dripping but I decided to embrace that accident and leave the drips to aid the surreal aesthetic.</p>
+                <p>Painting and other methods of art do not come naturally to me, but I still try to be creative when I
+                    can and have fun with it. I recently have been very into clothing alterations, so the first picture
+                    shows a jean jacket that I painted the subway surfers logo on the back. To aid my painting efforts,
+                    I lasercut a cardboard stencil.</p>
+                <p>The second picture is a mural that I made of a cat with some groovy lines. I am really into the funky
+                    style of art which I tried to recreate. The paint was more watery than expected, which is why it
+                    started dripping but I decided to embrace that accident and leave the drips to aid the surreal
+                    aesthetic.</p>
             </div>
             <div class="slider" id="slider2" data-disable-autoplay>
                 <div class="slides">
@@ -151,11 +197,12 @@
                 </div>
                 <div class="nav-dots"></div>
             </div>
-          </div>
-        
+        </div>
+
         <div class="section">
             <h2>Reflection</h2>
-            <p>I love doing small projects when I can to embrace my creativity and remind myself all the different ways that engineering can be fun and stress-free.</p>
+            <p>I love doing small projects when I can to embrace my creativity and remind myself all the different ways
+                that engineering can be fun and stress-free.</p>
         </div>
     </main>
 
