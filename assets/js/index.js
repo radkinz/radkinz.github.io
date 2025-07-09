@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         layoutMode: 'masonry',
         masonry: {
             columnWidth: '.portfolio-sizer',
-            gutter: 20,
+            gutter: 0,
             fitWidth: true
         }
     });

@@ -770,6 +770,41 @@ a:hover {
     position: relative;
 }
 
+.isotope-container {
+    position: relative;
+  }
+  
+  /* This acts like a placeholder column width — you already have this div */
+  .portfolio-sizer {
+    width: 300px; /* or whatever your desired base column width is */
+  }
+  
+  /* Key: items must be absolutely positioned so Isotope can move them */
+  .portfolio-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px; /* match .portfolio-sizer */
+    margin-bottom: 20px;
+  }
+  
+  /* Prevent any image overflow or scaling delay */
+  .portfolio-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .portfolio-item {
+    position: absolute;
+    width: 300px;
+  }
+  .portfolio-sizer {
+    width: 300px;
+  }
+  
+  
+
 
 
 /* Responsive collapse to 2 or 1 columns */
@@ -806,17 +841,6 @@ a:hover {
 .portfolio-sizer {
     width: 30%;
     /* roughly 3 columns + gutter */
-}
-
-/* Individual item */
-.portfolio-item {
-    width: 30%;
-    margin-bottom: 20px;
-    float: left;
-    border-radius: 10px;
-    overflow: hidden;
-    height: auto;
-    /* ✅ Natural height from image content */
 }
 
 
