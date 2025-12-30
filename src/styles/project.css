@@ -76,7 +76,7 @@
 .pub-card {
     display: block;
     padding: 0;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid #e6ecf5;
     background: #f7fbff;
