@@ -66,74 +66,85 @@ import BotDivider from "../components/BotDivider.astro";
     <p class="meta">A few things I’ve built. Each links to a write-up.</p>
 
     <div class="grid">
-      <a class="card" href="./projects/lids-platform/">
-        <h3>LIDS Autonomous Robot Platform</h3>
-        <p class="meta">
+        <a class="card pub-card" href="./projects/lids-platform/">
+    <div class="pub-hero">
+      <img
+        src="./projects/lids-platform/Square.gif"
+        alt="Autonomous mobile robot platform on lab bench"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="pub-badge">LIDS</span>
+    </div>
+    <div class="pub-body">
+        <h3>Autonomous Mobile Robot Research Platform</h3>
+        <p class="pub-meta">
           Design and implementation of a mobile robotics research platform, including
           hardware integration, ROS2 autonomy, and a Flask-based control interface.
         </p>
-        <div class="tags">
-          <span class="tag">Robotics</span>
-          <span class="tag">ROS2</span>
-          <span class="tag">Autonomy</span>
-          <span class="tag">Systems</span>
+          <div class="pub-cta">View Project</div>
         </div>
       </a>
 
+       <a class="card pub-card"  href="./projects/mobile-robot/">
+       <div class="pub-hero">
+        <img src="./projects/mobile-robot/binGrab.gif" alt="Mobile Robot in Action" loading="lazy" decoding="async" />
+        <span class="pub-badge">2.12</span>
+      </div>
+      <div class="pub-body">
+        <h3>Autonomous Bin Retrieval Robot</h3>
+        <p class="pub-meta">
+          Design and implementation of a mobile robot integrating perception,
+        localization, and control using ROS2 and onboard compute.
+        </p>
+            <div class="pub-cta">View Project</div>
+            </div>
+    </a>
 
-      <a class="card" href="./projects/2017/">
+      <a class="card pub-card" href="./projects/2017/">
+      <div class="pub-hero">
+        <img src="./projects/2017/2017-projectCard.gif" alt="Lobster Pot ROV" loading="lazy" decoding="async" />
+        <span class="pub-badge">2.017</span>
+      </div>
+       <div class="pub-body">
         <h3>Lobster Pot Recovery ROV</h3>
-        <p class="meta">
+        <p class="pub-meta">
           Design and deployment of an underwater robotic system for pot localization,
           teleoperation, and mechanical recovery under real-world constraints.
         </p>
-        <div class="tags">
-          <span class="tag">System Design</span>
-          <span class="tag">Embedded</span>
-          <span class="tag">Controls</span>
-        </div>
+            <div class="pub-cta">View Project</div>
+            </div>
       </a>
 
-      <a class="card" href="./projects/mobile-robot/">
-      <h3>2.12 Mobile Robot</h3>
-      <p class="meta">
-        Design and implementation of a mobile robot integrating perception,
-        localization, and control using ROS2 and onboard compute.
-      </p>
-      <div class="tags">
-        <span class="tag">ROS2</span>
-        <span class="tag">Perception</span>
-        <span class="tag">Localization</span>
-        <span class="tag">Controls</span>
+    <a class="card pub-card"" href="./projects/maslab/">
+    <div class="pub-hero">
+        <img src="./projects/maslab/capture2.gif" alt="Maslab Robot in action" loading="lazy" decoding="async" />
+        <span class="pub-badge">MASLAB</span>
       </div>
-    </a>
-
-    <a class="card" href="./projects/maslab/">
-    <h3>MASLAB Autonomous Robot</h3>
-    <p class="meta">
+     <div class="pub-body">
+    <h3>Autonomous Block Stacking Robot</h3>
+    <p class="pub-meta">
       Team-built autonomous robot for MIT’s MASLAB competition, integrating perception,
       state-machine autonomy, and manipulation under real-time constraints.
     </p>
-    <div class="tags">
-      <span class="tag">Autonomy</span>
-      <span class="tag">Perception</span>
-      <span class="tag">ROS2</span>
-      <span class="tag">Systems</span>
+    <div class="pub-cta">View Project</div>
     </div>
+    
   </a>
 
-  <a class="card" href="./projects/media-lab/">
+  <a class="card pub-card" href="./projects/media-lab/">
+      <div class="pub-hero">
+        <img src="./projects/media-lab/hero-2.png" alt="User Study with Jibo" loading="lazy" decoding="async" />
+        <span class="pub-badge">Media Lab</span>
+      </div>
+      <div class="pub-body">
     <h3>HRI User Studies with Social Robots</h3>
-    <p class="meta">
+    <p class="pub-meta">
       Robotics-focused user study research in MIT’s Personal Robotics Group,
       investigating interaction, storytelling, and affect using social robots,
       with results published at HRI.
     </p>
-    <div class="tags">
-      <span class="tag">HRI</span>
-      <span class="tag">User Studies</span>
-      <span class="tag">Robotics</span>
-      <span class="tag">Research</span>
+    <div class="pub-cta">View Project</div>
     </div>
   </a>
 

@@ -72,6 +72,111 @@
     gap: 8px;
 }
 
+/* Publication-style project tile */
+.pub-card {
+    display: block;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e6ecf5;
+    background: #f7fbff;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  
+  .pub-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+  }
+  
+  .pub-hero {
+    position: relative;
+    background: #dbe6f5;
+    overflow: hidden;
+    max-height: 300px;
+  }
+  
+  .pub-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.02);
+    object-position: center;
+  }
+  
+  /* Fade overlay for readable text area below image */
+  .pub-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(247, 251, 255, 0.85) 80%,
+      rgba(247, 251, 255, 1) 100%
+    );
+    pointer-events: none;
+  }
+  
+  /* Top-right pill badge */
+  .pub-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #fff;
+    background: black;
+  }
+  
+  /* Content area */
+  .pub-body {
+    padding: 18px 18px 20px 18px;
+  }
+  
+  .pub-body h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #1f2a3a;
+  }
+  
+  .pub-meta {
+    margin: 0 0 18px 0;
+    font-size: 12px;
+    color: #2b6de0;
+  }
+  
+  /* CTA button (looks like “VIEW PUBLICATION”) */
+  .pub-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 18px;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  
+  /* Optional: remove default focus outline but keep accessibility */
+  .pub-card:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.5);
+    outline-offset: 4px;
+  }
+  
+
+
 .link {
     color: var(--accent);
     text-decoration: none;
@@ -307,7 +412,7 @@
 
 .video-wrap video {
     width: 100%;
-    max-height: 480px;       
+    max-height: 480px;
     height: auto;
     display: block;
 }
@@ -341,7 +446,7 @@
     background: #111;
     opacity: 0.8;
     color: white;
-  }
+}
 
 .github-icon {
     width: 16px;
