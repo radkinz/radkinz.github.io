@@ -7,8 +7,15 @@ const project = {
   title: "Autonomous Bin Retrieval Robot",
   subtitle: "Final Project for Introduction to Robotics (2.12)",
   date: "May 2025",
-  category: "Perception, Localization, Embedded, Controls",
-  tools: ["Python", "C++", "Controls", "OpenCV"],
+  category: "Embedded Systems, Perception, Localization, Controls",
+   tools: [
+    "Python",
+    "C++ (PlatformIO)",
+    "OpenCV",
+    "Jetson Nano",
+    "ESP32",
+    "PySerial",
+  ],
   links: [
     { label: "Github", href: "https://github.com/radkinz/2.12-MobileRobot" },
   ],
@@ -100,26 +107,74 @@ gallery: [
       <section>
         <h2>Project Description</h2>
 
-        <p>
-          This robot was designed for the final competition in MIT's 2.12 Intro to Robotics course. As a team of five, we designed a robot to autonomously navigate a course, retrieve bins, and transport them to designated zones.
-        </p>
+         <p>
+    Built for the final competition in MIT’s 2.12 (Introduction to Robotics) class, this robot autonomously located,
+    retrieved, and began placing color-coded bins in a structured arena using a full-stack pipeline: AprilTag-based
+    localization, sensor fusion, short-range ToF sensing, and a high-torque bin-dragging end effector.
+  </p>
 
-        <p>
-          The platform used a two-wheel, rear-powered tank drive and a custom-designed end effector driven by a 60RPM high-torque servo to drag bins across the field. Our robot featured a Time-of-Flight sensor for short-range detection, an IMU for orientation, and a camera system mounted on a Jetson Nano for AprilTag pose estimation.
-        </p>
+  <p>
+    The platform was a two-wheeled rear-driven differential-drive robot (tank-style) with a custom scoop-style
+    end effector powered by a 60 RPM high-torque servo to reliably capture and drag bins. A calibrated front camera
+    on a Jetson Nano handled AprilTag pose estimation and vision processing, while the robot relied on wheel encoders,
+    an IMU, and ToF sensors for robust motion and proximity behavior.
+  </p>
+
+  <div class="callout">
+    <strong>Key capabilities:</strong>
+    <ul>
+      <li>AprilTag-based localization + mapping in a structured arena</li>
+      <li>Sensor fusion (AprilTag + IMU + odometry) for stable pose estimates</li>
+      <li>Vision-based bin classification with ToF-assisted bin approach</li>
+      <li>Wireless Jetson to ESP32 serial communiction and manual override for debugging/teleop</li>
+      <li>High-torque servo end effector designed for consistent bin capture</li>
+    </ul>
+  </div>
       </section>
 
       <!-- Software Architecture -->
       <section>
-        <h2>Software Architecture</h2>
-        <p>
-        The system was divided between low-level embedded motor/sensor control on an ESP32 and high-level perception, logic, and state management on the Jetson. I led the development of the low-level codebase and helped debug integration across the two systems using wireless communication.        
-        </p>
-        <p>
-        Although our full autonomous state machine was not completed due to time constraints, we successfully developed and tested core subsystems including pose localization, bin detection, and bin pickup routines. During the competition, we were able to run all these subsystems separately and then take over manual drive when needed for small corrections. 
-        </p>
+  <h2>Software Architecture</h2>
 
-      </section>
+  <p>
+    The stack was split cleanly into high-level autonomy on the Jetson and real-time embedded control on the ESP32.
+    The Jetson ran perception, localization, and task logic in Python (OpenCV + NumPy/SciPy), then issued motion and
+    actuator commands to the ESP32. The ESP32 firmware (C++ via PlatformIO) handled closed-loop motor control,
+    synchronous sensor polling, and wireless telemetry with a modular, test-first codebase.
+  </p>
+
+  <div class="callout">
+    <strong>High-level (Jetson / Python):</strong>
+    <ul>
+      <li><code>apriltag_pose.py</code> — calibrated AprilTag 6DOF pose estimation</li>
+      <li><code>updatedSensorFusion.py</code> — fused AprilTag + IMU for localization robustness</li>
+      <li><code>sensorSuite.py</code> — unified access to IMU, ToF, and serial comms</li>
+      <li><code>binIdentify.py</code> / <code>binGrabTest.py</code> — bin classification + ToF-driven approach/grab routines</li>
+      <li><code>targetTest.py</code> — primary run loop coordinating localization + bin acquisition behavior</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <strong>Low-level (ESP32 / C++ PlatformIO):</strong>
+    <ul>
+      <li>2-wheel tank drive with PID velocity control and differential-drive kinematics</li>
+      <li>Modular libraries: <code>PID</code>, <code>EncoderVelocity</code>, <code>MotorDriver</code>, <code>IMU</code>, <code>ToFSensor</code></li>
+      <li>Wireless link via ESP-NOW using shared packet structs (<code>wireless.h</code>)</li>
+      <li>Robot/manual controller split: controller ESP32 sends input to the robot's ESP32 executes motion overriding the autonomous state machine.</li>
+      <li>Unit-style test programs for motors, encoders, sensors, and wireless reliability</li>
+    </ul>
+  </div>
+
+  <p>
+    Due to late-stage time constraints, the competition workflow was semi-autonomous. We relied on the core
+    localization and bin grab/place loops, and used manual override for small corrections when needed.
+  </p>
+
+  <p>
+   I led the robot’s autonomy stack from perception to actuation. This included designing the ESP32 firmware (motor drivers, encoder feedback, PID velocity control, and wireless protocols) and integrating and extending the Jetson-side Python code to build the semi-autonomous localization and bin-retrieval loops.
+  </p>
+</section>
+
 
       <!-- Performance & Design -->
       <section class="project-section">
