@@ -1,0 +1,335 @@
+---
+import Layout from "../../../components/Layout.astro";
+const BASE = import.meta.env.BASE_URL;
+
+// Edit these strings later
+const project = {
+  title: "MASLAB",
+  subtitle: "MIT Mobile Autonomous Systems Lab (6.9600)",
+  date: "January 2024",
+  category: "Perception, Localization, Controls",
+  tools: ["ROS2", "OpenCV", "Onshape", "Laser cutting"],
+
+gallery: [
+  { src: `${BASE}projects/maslab/hero-1.png`, mode: "cover" },
+  { src: `${BASE}projects/maslab/hero-2.png`, mode: "contain" },
+{ src: `${BASE}projects/maslab/hero-3.jpg`, mode: "cover" },
+{ src: `${BASE}projects/maslab/door.gif`, mode: "contain" },
+],
+
+};
+---
+
+<Layout title={`${project.title} — River Adkins`}>
+  <section class="panel project-page">
+    <!-- ===================== -->
+    <!-- Back -->
+    <!-- ===================== -->
+    <a class="back" href={`${import.meta.env.BASE_URL}#projects`}>← Back to projects</a>
+
+    <!-- ===================== -->
+    <!-- Header -->
+    <!-- ===================== -->
+    <header class="project-header">
+      <h1 class="project-title">{project.title}</h1>
+      <p class="project-subtitle">{project.subtitle}</p>
+    </header>
+
+    <!-- ===================== -->
+    <!-- Top: Gallery + Info -->
+    <!-- ===================== -->
+    <div class="project-top">
+      <!-- Gallery -->
+      <div class="gallery" data-gallery>
+        <div class="gallery-track">
+          {project.gallery.map((item) => (
+            <div class={`gallery-slide ${item.mode === "contain" ? "is-poster" : ""}`}>
+                <img src={item.src} alt="" loading="lazy" />
+            </div>
+            ))}
+
+        </div>
+
+        <div class="gallery-controls">
+        <button type="button" class="gallery-btn" data-prev aria-label="Previous">←</button>
+        <button type="button" class="gallery-btn" data-next aria-label="Next">→</button>
+        </div>
+
+
+        <div class="gallery-dots" data-dots></div>
+      </div>
+
+      <!-- Project info card -->
+      <aside class="project-card">
+        <h2 class="project-card-title">MASLAB</h2>
+        <hr />
+        <p><strong>Category:</strong> {project.category}</p>
+        <p><strong>Project date:</strong> {project.date}</p>
+        <p><strong>Tools used:</strong> {project.tools.join(", ")}</p>
+
+      </aside>
+    </div>
+
+    <!-- ===================== -->
+    <!-- Body -->
+    <!-- ===================== -->
+    <article class="project-body">
+      <!-- Project Description -->
+      <section>
+        <h2>Project Description</h2>
+
+        <p>
+           MASLAB is MIT’s winter-session robotics competition where teams build an autonomous robot to complete a new task each year. In our year, the objective was to identify, collect, and stack color-coded cubes into uniform-color towers. Our robot placed 2nd out of 12 teams.
+        </p>
+
+        <p>
+        I was primarily responsible for the software stack, focusing on perception and state machine design. I built the vision pipeline for detecting blocks and estimating their position relative to the robot, and I helped integrate those outputs into a robust autonomy loop that coordinated navigation and mechanism actions through ROS2.
+        </p>
+      </section>
+
+      <!-- System overview -->
+      <section class="section">
+        <h2>System Overview</h2>
+        <p >
+            The robot used an Intel NUC as the main onboard computer and a Teensy 4.1 as a real-time
+            interface for servos and sensors. High-level autonomy ran in ROS2 nodes on the NUC, and the
+            Teensy handled low-level I/O; the two exchanged commands and telemetry through a ROS2-based
+            software stack.
+        </p>
+
+        <ul class="detail-list">
+            <li><b>Main compute:</b> Intel NUC (onboard autonomy + perception)</li>
+            <li><b>Microcontroller:</b> Teensy 4.1 (servos + sensors I/O)</li>
+            <li><b>Middleware:</b> ROS2 for inter-node communication and system integration</li>
+        </ul>
+        </section>
+
+     <!-- Perception -->
+      <section class="proj-section" id="perception">
+        <h2>Perception</h2>
+
+        <p class="lead">
+            I contributed to perception and autonomy integration for detecting blocks/towers
+            and feeding reliable targets into the state machine.
+        </p>
+
+        <ul class="detail-list">
+            <li>
+            <strong>Target detection:</strong>
+            Helped implement and tune HSV-based color segmentation (OpenCV) for detecting
+            blocks and towers from a top-mounted camera.
+            </li>
+
+            <li>
+            <strong>Arena-aware filtering:</strong>
+            Added simple spatial filtering to reject detections outside the playable region
+            (e.g., above the boundary), reducing false positives from reflections/background.
+            </li>
+
+            <li>
+            <strong>Integration:</strong>
+            Perception outputs were packaged as ROS2 topics and integrated into the autonomy state machine, supporting search and approach behaviors.
+            </li>
+        </ul>
+        </section>
+
+        <section  class="two-col">
+        <div>
+        <h2>Control</h2>
+        <p >
+            Once the block pose was estimated, the robot executed a closed-loop approach behavior: heading correction based on block angle and forward motion based on estimated distance. Encoder feedback and a PID loop helped keep motion repeatable so the perception estimates stayed consistent during approach.
+        </p>
+        </div>
+        <div class="diagram-card">
+          <img
+            src={`${import.meta.env.BASE_URL}projects/maslab/driving.gif`}
+            alt="Our robot autonomously driving toward a block."
+            loading="lazy"
+          />
+          <p class="diagram-caption">
+          Testing autonomously driving towards a block using color segmentation and PID control.
+          </p>
+        </div>
+        
+        </section>
+
+        <section class="section">
+        <h2>State Machine Logic</h2>
+        <p >
+        Our robot’s autonomous behavior was structured around a finite state machine (FSM) that coordinated perception, actuation, and task-level decision making throughout the match. The FSM governed how the robot searched for blocks, committed to capture actions, handled incorrect targets, and deposited completed towers.        
+        </p>
+        <p>
+        The state machine was implemented within the ROS2 autonomy stack, with each state corresponding to a set of ROS nodes and behaviors such as perception updates, motion commands, and mechanism control. Transitions between states were driven by perception outputs (block/tower detection, color classification) and internal conditions such as storage capacity or task completion.
+        </p>
+        <p>
+        I helped design and integrate the finite state machine, and had success testing individual modules such as driving toward the tower, funneling the blocks, etc. However, during full system integration, blocking sleep calls introduced significant latency that conflicted with ROS2’s execution model and prevented the complete state machine from operating as intended. 
+        While this ultimately limited the robustness of the complete autonomy pipeline, the experience taught us the importance of non-blocking, event-driven state execution in real-time systems.        </p>
+       
+        <div class="diagram-card">
+          <img
+            src={`${import.meta.env.BASE_URL}projects/maslab/fsm.png`}
+            alt="Finite state machine governing autonomous behavior"
+            loading="lazy"
+          />
+          <p class="diagram-caption">
+           High-level finite state machine used to coordinate perception, manipulation, and task execution.
+          </p>
+        </div>
+        </section>
+
+      <!-- Performance -->
+      <section class="project-section">
+        <h2>Competition Performance</h2>
+        <div>
+        <p>
+        Although the state machine was not fully complete, the robot performed well under competition conditions and ultimately placed second overall. Highlights from our runs are shown below.
+        </p>
+        <div class="diagram-card">
+          <img
+            src={`${import.meta.env.BASE_URL}projects/maslab/capture1.gif`}
+            alt="First block capture"
+            loading="lazy"
+          />
+          <p class="diagram-caption">
+            After knocking down the tower, the robot detected the block, funneled it into position, and secured it using the actuator.
+          </p>
+        </div>
+        <div class="diagram-card">
+          <img
+            src={`${import.meta.env.BASE_URL}projects/maslab/capture2.gif`}
+            alt="2 blocks captured and stacked"
+            loading="lazy"
+          />
+          <p class="diagram-caption">
+          After securing the first block, the robot lifted it to create clearance for stacking a second block.          </p>
+        </div>
+
+        
+
+        </div>
+        
+
+        </section>
+    </article>
+  </section>
+</Layout>
+
+<script is:inline>
+(() => {
+  const root = document.querySelector("[data-gallery]");
+  if (!root) return;
+
+  const track = root.querySelector(".gallery-track");
+  const slides = [...root.querySelectorAll(".gallery-slide")];
+  const prev = root.querySelector("[data-prev]");
+  const next = root.querySelector("[data-next]");
+  const dotsWrap = root.querySelector("[data-dots]");
+
+  if (!track || slides.length === 0) return;
+
+  let idx = 0;
+
+  function setActiveDot() {
+    if (!dotsWrap) return;
+    [...dotsWrap.children].forEach((d, j) => d.toggleAttribute("data-active", j === idx));
+  }
+
+  function snapTo(i) {
+    idx = (i + slides.length) % slides.length;
+
+    // Prevent vertical jump by forcing "block: nearest"
+    slides[idx].scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest",
+    });
+
+    setActiveDot();
+  }
+
+  if (dotsWrap) {
+    dotsWrap.innerHTML = "";
+    slides.forEach((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "gallery-dot";
+      b.addEventListener("click", (e) => {
+        e.preventDefault();
+        snapTo(i);
+      });
+      dotsWrap.appendChild(b);
+    });
+  }
+
+  prev?.addEventListener("click", (e) => {
+    e.preventDefault();
+    snapTo(idx - 1);
+  });
+
+  next?.addEventListener("click", (e) => {
+    e.preventDefault();
+    snapTo(idx + 1);
+  });
+
+  // When the gallery is focused, use arrow keys to navigate WITHOUT scrolling the page
+  root.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      snapTo(idx - 1);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      snapTo(idx + 1);
+    }
+  });
+
+  // Make sure the gallery can receive keyboard focus
+  if (!root.hasAttribute("tabindex")) root.setAttribute("tabindex", "0");
+
+  snapTo(0);
+
+    const videos = document.querySelectorAll("video.lazy-video[data-src]");
+    if (!videos.length) return;
+
+    const loadVideo = (video) => {
+      const src = video.dataset.src;
+      if (!src) return;
+      video.src = src;
+      video.removeAttribute("data-src");
+      // video.load(); // optional; setting src usually triggers load
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      videos.forEach(loadVideo);
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadVideo(entry.target);
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: "200px 0px" }); // starts loading slightly before it appears
+
+    videos.forEach(v => io.observe(v));
+})();
+</script>
+<style>
+
+/* Clean bullet style */
+.detail-list {
+  margin-top: 18px;
+  padding-left: 1.1rem;
+  max-width: 80ch;
+}
+
+.detail-list li {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.detail-list strong {
+  font-weight: 700;
+}
+
+</style>

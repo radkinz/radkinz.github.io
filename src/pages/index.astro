@@ -1,16 +1,208 @@
 ---
-
+import Layout from "../components/Layout.astro";
+import Headshot from "../components/Headshot.astro";
+import BotDivider from "../components/BotDivider.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="River Adkins — Robotics Software">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1 class="h1">Hi! I'm River.</h1>
+      <p class="hero-rotator" aria-label="Rotating role title">
+        I am a <span class="rotator-wrap"><span id="rotatorWord" class="rotator-word">robotics engineer</span><span class="rotator-cursor" aria-hidden="true"></span></span>
+      </p>
+
+      <p class="sub">
+       Focused on building reliable autonomy across software, controls, and hardware.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn" href="./resume/">Resume</a>
+        <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <Headshot src="./img/headshot.png" alt="My headshot" />
+    </div>
+  </section>
+
+  <BotDivider variant="hero-about" />
+
+    <!-- ABOUT -->
+  <section id="about" class="panel about">
+    <h2>About</h2>
+
+    <div class="about-grid">
+      <div class="about-media">
+        <img
+          src="./img/aboutMe.png"
+          alt="Working on a mobile robot in the lab"
+          class="about-photo"
+        />
+      </div>
+
+      <div class="about-copy">
+        <p>
+        I’m currently in my fourth year at MIT, where I research autonomy and human–robot collaboration. I enjoy building robust robotic systems that operate in the real world.
+        </p>
+         <p>
+        My work spans software, controls, hardware design, and system integration. I’m especially interested in how learning-based methods can be incorporated into real-world systems, and how autonomy pipelines can account for environmental context, human intent, and real-world variability while remaining robust.
+         </p>
+          <p>
+        Outside the lab, I’m involved in my dorm’s government, and you can usually find me DJing, skating, or rock climbing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <BotDivider variant="about-projects" />
+
+  <!-- PROJECTS -->
+  <section id="projects" class="panel">
+    <h2>Projects</h2>
+    <p class="meta">A few things I’ve built. Each links to a write-up.</p>
+
+    <div class="grid">
+      <a class="card" href="./projects/lids-platform/">
+        <h3>LIDS Autonomous Robot Platform</h3>
+        <p class="meta">
+          Design and implementation of a mobile robotics research platform, including
+          hardware integration, ROS2 autonomy, and a Flask-based control interface.
+        </p>
+        <div class="tags">
+          <span class="tag">Robotics</span>
+          <span class="tag">ROS2</span>
+          <span class="tag">Autonomy</span>
+          <span class="tag">Systems</span>
+        </div>
+      </a>
+
+
+      <a class="card" href="./projects/2017/">
+        <h3>Lobster Pot Recovery ROV</h3>
+        <p class="meta">
+          Design and deployment of an underwater robotic system for pot localization,
+          teleoperation, and mechanical recovery under real-world constraints.
+        </p>
+        <div class="tags">
+          <span class="tag">System Design</span>
+          <span class="tag">Embedded</span>
+          <span class="tag">Controls</span>
+        </div>
+      </a>
+
+      <a class="card" href="./projects/mobile-robot/">
+      <h3>2.12 Mobile Robot</h3>
+      <p class="meta">
+        Design and implementation of a mobile robot integrating perception,
+        localization, and control using ROS2 and onboard compute.
+      </p>
+      <div class="tags">
+        <span class="tag">ROS2</span>
+        <span class="tag">Perception</span>
+        <span class="tag">Localization</span>
+        <span class="tag">Controls</span>
+      </div>
+    </a>
+
+    <a class="card" href="./projects/maslab/">
+    <h3>MASLAB Autonomous Robot</h3>
+    <p class="meta">
+      Team-built autonomous robot for MIT’s MASLAB competition, integrating perception,
+      state-machine autonomy, and manipulation under real-time constraints.
+    </p>
+    <div class="tags">
+      <span class="tag">Autonomy</span>
+      <span class="tag">Perception</span>
+      <span class="tag">ROS2</span>
+      <span class="tag">Systems</span>
+    </div>
+  </a>
+
+  <a class="card" href="./projects/media-lab/">
+    <h3>HRI User Studies with Social Robots</h3>
+    <p class="meta">
+      Robotics-focused user study research in MIT’s Personal Robotics Group,
+      investigating interaction, storytelling, and affect using social robots,
+      with results published at HRI.
+    </p>
+    <div class="tags">
+      <span class="tag">HRI</span>
+      <span class="tag">User Studies</span>
+      <span class="tag">Robotics</span>
+      <span class="tag">Research</span>
+    </div>
+  </a>
+
+
+
+
+    </div>
+  </section>
+
+  <BotDivider variant="projects-contact" />
+
+  <!-- CONTACT -->
+  <section id="contact" class="panel">
+    <h2>Contact</h2>
+    <p>Reach out by email — happy to chat about autonomy tooling and deploying systems that don’t break!</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:radkins@mit.edu">Email</a>
+      <a class="btn" href="www.linkedin.com/in/river-adkins-25b893216/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" href="https://github.com/radkinz" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+(() => {
+  const el = document.getElementById("rotatorWord");
+  if (!el) return;
+
+  const words = [
+    "Robotics Engineer",
+    "Software Developer",
+    "Controls + Systems Engineer",
+    "Undergraduate Researcher",
+    "Disc Jockey"
+  ];
+
+
+  const typingMs = 28;      // speed of typing
+  const deletingMs = 18;    // speed of deleting
+  const holdMs = 1100;      // pause when word fully typed
+
+  let w = 0;
+  let i = 0;
+  let deleting = false;
+
+  function tick() {
+    const word = words[w];
+
+    if (!deleting) {
+      i++;
+      el.textContent = word.slice(0, i);
+      if (i >= word.length) {
+        deleting = true;
+        setTimeout(tick, holdMs);
+        return;
+      }
+      setTimeout(tick, typingMs);
+    } else {
+      i--;
+      el.textContent = word.slice(0, i);
+      if (i <= 0) {
+        deleting = false;
+        w = (w + 1) % words.length;
+      }
+      setTimeout(tick, deletingMs);
+    }
+  }
+
+  tick();
+})();
+</script>
+

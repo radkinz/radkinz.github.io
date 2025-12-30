@@ -1,0 +1,15 @@
+---
+const { title, blurb, tags = [], href = "#", year = "" } = Astro.props;
+---
+<a class="card" href={href}>
+  <div class="cardTop">
+    <h3>{title}</h3>
+    {year ? <div class="meta">{year}</div> : null}
+  </div>
+  <div class="meta">{blurb}</div>
+  {tags.length ? (
+    <div class="tags">
+      {tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+  ) : null}
+</a>

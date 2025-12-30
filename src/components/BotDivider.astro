@@ -1,0 +1,75 @@
+---
+/**
+ * Use:
+ *  variant="hero-about"  -> humanoid moves
+ *  variant="about-projects" -> cute robot moves
+ *  variant="projects-contact" -> agv moves
+ */
+const { variant = "about-projects" } = Astro.props;
+
+const robotSrc =
+  variant === "hero-about"
+    ? "./bots/humanoid.png"
+    : variant === "projects-contact"
+      ? "./bots/robot.png"
+      : "./bots/agv.png";
+
+const cls =
+  variant === "hero-about" ? "humanoid" :
+  variant === "projects-contact" ? "agv" : "robot";
+---
+
+<div class="divider" data-variant={variant} data-dir={variant === "about-projects" ? -1 : 1}>
+  <div class="rail">
+    <div class="bot-row">
+      {Array.from({ length: 12 }).map(() => (
+        <img class="bot" src={robotSrc} alt="" />
+      ))}
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function () {
+  const root = document.currentScript?.previousElementSibling;
+  if (!root) return;
+
+  const row = root.querySelector(".bot-row");
+  if (!row) return;
+
+  const clamp01 = (x) => Math.max(0, Math.min(1, x));
+  const ease = (t) => 0.5 - 0.5 * Math.cos(Math.PI * t);
+
+  function progressInViewport(el){
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || 1;
+
+    if (r.bottom < 0 || r.top > vh) return 0;
+
+    const total = vh + r.height;
+    const traveled = vh - r.top;
+    return clamp01(traveled / total);
+  }
+
+  const rows = root.querySelectorAll(".bot-row");
+
+  function tick(){
+    const t = ease(progressInViewport(root));
+    const w = root.clientWidth || window.innerWidth;
+
+    const rowW = row.scrollWidth;
+    const startOffset = -rowW * 0.25;
+    const travel = Math.min(w * 0.6, rowW * 0.5);
+
+    const dir = Number(root.dataset.dir || 1);   // +1 or -1
+    const x = startOffset + dir * travel * t;
+
+    row.style.transform = `translate3d(${x}px, -50%, 0)`;
+
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+
+})();
+</script>

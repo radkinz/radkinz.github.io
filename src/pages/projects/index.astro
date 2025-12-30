@@ -1,0 +1,30 @@
+---
+import Layout from "../../components/Layout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+---
+
+<Layout title="Projects — Your Name">
+  <section class="section">
+    <h2>Projects</h2>
+    <div class="grid">
+      <ProjectCard title="Prosody → LLM → Robot Actions" year="2025"
+        blurb="Speech pipeline with Flask endpoints, feature extraction, and action execution."
+        tags={["Python", "Flask", "Audio", "LLMs"]}
+        href="/projects/prosody-llm/" />
+      <ProjectCard title="ROS2 Navigation + Controllers" year="2025"
+        blurb="Node-based autonomy stack with controllers and test harnesses."
+        tags={["ROS2", "Control", "Testing"]}
+        href="/projects/ros2-nav/" />
+      <ProjectCard title="Simulation / RL Demo" year="2024"
+        blurb="Training + eval pipeline with reproducible experiments."
+        tags={["RL", "Simulation"]}
+        href="/projects/sim-rl/" />
+      <ProjectCard title="Fleet Ops Tooling" year="2024"
+        blurb="Experiment logs, visualization, and debugging workflows."
+        tags={["Tooling", "Metrics"]}
+        href="/projects/fleet-tooling/" />
+        
+    </div>
+  </section>
+</Layout>
+

@@ -1,0 +1,37 @@
+---
+import "../styles/global.css";
+import "../styles/project.css";
+const { title="River Adkins", description="Portfolio" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="nav">
+        <div class="brand">River Adkins</div>
+        <nav class="links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="./resume/">Resume</a>
+        </nav>
+      </header>
+
+      <main><slot /></main>
+
+      <footer class="footer">
+        <div>© {new Date().getFullYear()} River Adkins</div>
+        <div>
+          <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer">GitHub</a>{" · "}
+          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>{" · "}
+          <a href="mailto:you@email.com">Email</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

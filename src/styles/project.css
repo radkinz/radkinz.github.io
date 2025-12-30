@@ -1,0 +1,349 @@
+/* =========================================================
+   Project Page — Layout + Top-level
+   ========================================================= */
+.project-page {
+    padding: 28px;
+}
+
+.back {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.project-header {
+    margin-bottom: 14px;
+}
+
+.project-title {
+    margin: 0;
+    font-size: clamp(26px, 3.2vw, 40px);
+    letter-spacing: -0.6px;
+}
+
+.project-subtitle {
+    margin: 8px 0 0;
+    color: var(--muted);
+    max-width: 70ch;
+}
+
+.project-top {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 16px;
+    align-items: start;
+    margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+    .project-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    background: #fff;
+}
+
+.project-card-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.project-card hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 10px 0;
+}
+
+.project-card p {
+    margin: 8px 0;
+    color: var(--muted);
+}
+
+.project-links {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   Body Typography + Common helpers
+   ========================================================= */
+.project-body {
+    margin-top: 18px;
+}
+
+.project-body h2 {
+    margin: 22px 0 10px;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+}
+
+.project-body p,
+.project-body li {
+    color: var(--muted);
+}
+
+.meta {
+    color: var(--muted);
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   Gallery
+   ========================================================= */
+.gallery {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-slide.is-poster img {
+    object-fit: contain;
+    background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+    .gallery-slide img {
+        height: 280px;
+    }
+}
+
+.gallery-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    right: 0;
+    pointer-events: auto;
+}
+
+.gallery-btn {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.gallery-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.12);
+}
+
+.gallery-dot[data-active] {
+    background: rgba(37, 99, 235, 0.55);
+}
+
+/* =========================================================
+   Optional fallback / media card utilities
+   ========================================================= */
+.gallery-fallback {
+    background: #f8fafc;
+}
+
+.fallback-inner {
+    padding: 26px;
+}
+
+.fallback-title {
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.fallback-text {
+    color: var(--muted);
+}
+
+.media-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+    background: #fff;
+}
+
+.media-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.media-img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-top: 10px;
+    display: block;
+}
+
+/* =========================================================
+   Architecture section (text + bullets)
+   ========================================================= */
+.arch-summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.arch-list {
+    padding-left: 1.1rem;
+    margin: 0;
+}
+
+.arch-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+    color: var(--muted);
+}
+
+.arch-list strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* =========================================================
+   Diagram card (Architecture + Mission Flow share this)
+   ========================================================= */
+.diagram-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    background: var(--panel-bg);
+    margin-top: 2.25rem;
+}
+
+.diagram-card img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.diagram-caption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.video-wrap {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.video-wrap video {
+    width: 100%;
+    max-height: 480px;       
+    height: auto;
+    display: block;
+}
+
+.caption {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.github-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    /* <- key: square-ish, not pill */
+    background: #111;
+    color: #fff;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    width: fit-content;
+}
+
+.github-badge:hover {
+    background: #111;
+    opacity: 0.8;
+    color: white;
+  }
+
+.github-icon {
+    width: 16px;
+    height: 16px;
+}
