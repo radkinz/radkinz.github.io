@@ -383,7 +383,7 @@ a:hover {
     /* don’t shrink */
     height: 80px;
     width: auto;
-    opacity: 0.14;
+    opacity: 0.7;
     display: block;
 }
 
